@@ -9,9 +9,6 @@
 *
 */
 
-body {
-	font-family: Shanti !important;
-}
 .ui-bar-a {
 	border: none;
 	background: transparent;
@@ -42,7 +39,7 @@ body {
 
 .ui-bar-a,.ui-bar-a input,.ui-bar-a select,.ui-bar-a textarea,.ui-bar-a button
 	{
-	font-family: Shanti;
+
 }
 
 .ui-body-a,.ui-overlay-a {
@@ -60,7 +57,7 @@ body {
 
 .ui-body-a,.ui-body-a input,.ui-body-a select,.ui-body-a textarea,.ui-body-a button
 	{
-	font-family: Shanti;
+
 }
 
 .ui-body-a .ui-link-inherit {
@@ -147,7 +144,7 @@ body {
 }
 
 .ui-btn-up-a,.ui-btn-hover-a,.ui-btn-down-a {
-	font-family: Shanti;
+	
 	text-decoration: none;
 	background-repeat: repeat-x, repeat-y;
 	background-color: rgba(0, 0, 0, .4);
@@ -175,7 +172,7 @@ a.ui-link-inherit {
 	background-image: -ms-linear-gradient(#000000, #fafafa);
 	background-image: -o-linear-gradient(#000000, #fafafa);
 	background-image: linear-gradient(#000000, #fafafa);
-	font-family: Shanti;
+
 }
 
 .ui-btn-active:visited,.ui-btn-active:hover,.ui-btn-active a.ui-link-inherit
@@ -673,8 +670,7 @@ th {
 	text-align: center;
 	text-shadow: none !important;
 	color:#67abca !important;
-	font-family: Shanti;
-	font-size: 28px;
+	font-size: 24px;
 
 }
 .rssBody li{
