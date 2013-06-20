@@ -196,17 +196,20 @@ function makemenu(json){
 			if(day == serveur)
 			{
 				if(MidiSize>0)
-					html += "<li id=\"EntréesM\"><img src=\"css/entree.png\" class=\"icons\"></img><h4>Entrées:</h4>"+EntréesMidi+"</li>" +
-							"<li id=\"PlatsM\"><img src=\"css/repas.png\" class=\"icons\"></img><h4>Plats:</h4>"+PlatsMidi+"</li>" +
-							"<li id=\"LégumesM\"><img src=\"css/legume.png\" class=\"icons\"></img><h4>Légumes:</h4>"+ LégumesMidi+"</li>" +
-							"<li id=\"DessertsM\"><img src=\"css/dess.png\" class=\"icons\"></img><h4>Desserts:</h4>"+DessertsMidi+"</li>";
+					html +="<li><img src=\"css/jour.jpg\" class=\"icons\"></img></li>"+
+							"<li id=\"EntréesM\"><img src=\"css/entree.png\" class=\"icons\"></img><p>"+EntréesMidi+"</p></li>" +
+							"<li id=\"PlatsM\"><img src=\"css/repas.png\" class=\"icons\"></img><p>"+PlatsMidi+"</p></li>" +
+							"<li id=\"LégumesM\"><img src=\"css/legume.png\" class=\"icons\"></img><p>"+ LégumesMidi+"</p></li>" +
+							"<li id=\"DessertsM\"><img src=\"css/dess.png\" class=\"icons\"></img><p>"+DessertsMidi+"</p></li>";
 				else 
 					html += "<li><p><span style='text-decoration:underline' >Midi</span> : Pas de service</p></li>";
 				if(SoirSize>0)
-					html +="<li  id=\"EntréesSoir\"><p><h4>Entrées:</h4>"+EntréesSoir+" </p></li>" +
-							"<li id=\"Plats\"><p><h4>Plats:</h4>"+PlatsSoir+"</p></li>" +
-							"<li id=\"Légumes\"><p><h4>Légumes:</h4>" +LégumesSoir+"</p></li>" +
-							"<li id=\"Desserts\"><p><h4>Desserts:</h4>"+DessertsSoir+"</p></li>";
+					html+="<li><img src=\"css/soir.png\" class=\"icons\"></img></li>"+
+							"<li id=\"EntréesSoir\"><img src=\"css/entree.png\" class=\"icons\"></img><p>"+EntréesSoir+"</p></li>" +
+							"<li id=\"Plats\"><img src=\"css/repas.png\" class=\"icons\"></img><p>"+PlatsSoir+"</p></li>" +
+							"<li id=\"Légumes\"><img src=\"css/legume.png\" class=\"icons\"></img><p>"+ LégumesSoir+"</p></li>" +
+							"<li id=\"Desserts\"><img src=\"css/dess.png\" class=\"icons\"></img><p>"+DessertsSoir+"</p></li>";
+		
 				else 
 					html += "<li><p class=\"soir\"><span style='text-decoration:underline' ><h4>Soir</span> : Pas de service</h4></p></li>";
 			}
@@ -218,17 +221,18 @@ function makemenu(json){
 	else {
 		alert("le menu n'a pas été envoyer!!!");
 	}
-	
-	$('#listebeta').html(html);	
+	$('#page_menu').html("");	
+	$('#page_menu').html(html);	
 
 }
 
 //btn retour sur la liste des resto qd on est ds le menu
 $(document).on('click','#btnBack', function(){ 
+	$('#addressText').html("");	
 	jour = today.getDay();
 	numero = today.getDate();
 	html="";
-	$('#addressText').html(html);
+
 });
 
 $(document).ready(function() {
@@ -236,6 +240,7 @@ $(document).ready(function() {
 	jour = today.getDay();
 	numero = today.getDate();
 	setdate();
+	
 });
 
 $(document).on('swipeleft','#btnnext', function() {

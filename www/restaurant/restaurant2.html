@@ -21,12 +21,7 @@
 	  			  color: #FFFFFF;
 	  			  cursor: pointer;
 			}
-			
-			#listebeta li{
-				background-image: url('css/menu.jpg');
-				background-repeat: no-repeat;
-				text-color:#000;
-			}
+
 			.icons{
 			float:left;
 			}
@@ -52,15 +47,29 @@
 				background-color:#000;
 				text-color: #fafafa;
 			}
-
-			.adp-step, .adp-substep{
-				background-color:#000;
-				color: #fafafa;
-
+			#page_menu {
+				float: left;
+				width:69%;
+				color: #fafafa !important;
 			}
 			
 			.page_layout{
-				padding-bottom:  15% !important;
+				width:100%;
+				padding-bottom:  20% !important;
+			}
+			
+			.ui-li li{
+				border: 2px solid #525252;
+				background-color: #fff;
+				margin-buttom: 5px !important;
+				color:#000;
+				font-family: Helvetica, Arial, sans-serif;
+			}
+		
+			#Rname{
+				background: url(./css/blackboard.jpg);
+				background-repeat: no-repeat;
+				width:100%;
 			}
 		</style>
 
@@ -83,7 +92,7 @@
 			</div>
 			
 		</div>
-		<div class="page_layout">
+		<div class="page_layout" class="contents">
 				<ul id="listeAlpha" data-role="listview"></ul>
 				<small id="page_footer">Source : CROUS Clermont-Ferrand</small>
 		</div>
@@ -100,11 +109,11 @@
 			<div data-role="navbar">
 				<ul>
 					<li><a  href="../main.html" data-transition="slide" ><img src="../common/css/icons/home.png" ></a>  </li>	
-					<li><a data-rel="back" data-direction="reverse" ><img src="../common/css/icons/back_button.png" ></a></li>
+					<li><a id="btnBack" data-rel="back" data-direction="reverse" ><img src="../common/css/icons/back_button.png" ></a></li>
 				</ul>
 			</div>
 		</div>	
-		<div class="page_layout">
+		<div class="contents">
 			<div class="ui-body-a" id="pdate"></div>
 			<div class="ui-body-a" id="Rname"></div>
 			<table id="textmenu">
@@ -113,7 +122,7 @@
 						<a href="#menupage"><img src="css/left.png"></img></a>
 					</td>
 					<td>	
-						<ul id="listebeta" data-role="listview" data-inset="true"></ul>
+						<ul id="page_menu" data-role="listview" data-inset="true"></ul>
 					</td>
 					<td id="btnnext" class="backicons" data-transition="slide" data-ajax="false">
 						<a href="#menupage"><img src="css/right.png"></img></a>
@@ -123,7 +132,7 @@
 			<div class="ui-body-a" id="address"></div>
 			<div id="itineraire">	
 		 		 <div id="mapholder"></div>
-		  		 <div class="ui-body-a" id="addressText"></div>					
+		  		 <div class="contents" class="ui-body-a" id="addressText"></div>					
 			</div>
 		</div>		
 		<div id="page_footer" data-role="footer" data-position="fixed"  >

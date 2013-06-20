@@ -691,9 +691,7 @@ th {
 
 .contents{
 	margin: 0;
-	padding: 0;
-	height:90%;	
-	width: 90%;
+	padding-bottom: 20% !important;
 	text-align: center;
 }
 

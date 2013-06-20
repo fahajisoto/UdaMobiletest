@@ -206,9 +206,7 @@ function setdate(){
 	TabJour = new Array("Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi");
 	TabMois = new Array("janvier","février","mars","avril","mai","juin","juillet","aout","septembre","octobre","novembre","décembre");
 	messageDate = TabJour[jour] + " " + numero + " " + TabMois[month];
-	
 	$("#pdate").html(messageDate);
-
 	month=month+1;
 	if (month>9)
 		day = today.getFullYear()+"-"+month+"-"+numero;
