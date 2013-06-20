@@ -659,7 +659,7 @@ th {
 }
 .annuaire{
 	border-radius: 0.6em 0.6em 0.6em 0.6em;
-	background: #eeeadd;
+	background: #eeeadd ;
 	color:#636363;
 	padding:1px !important;
 	margins: 1px !important;	
@@ -675,9 +675,9 @@ th {
 }
 .rssBody li{
 	border-radius: 0.6em 0.6em 0.6em 0.6em;
-	border: 2px !important;
+	border: 2px #636363 !important;
 	background: #eeeadd;
-	color:#636363;
+	color:#636363 !important;
 	text-align: left !important;
 	margins: 1px !important;	
 	
