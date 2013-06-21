@@ -196,19 +196,19 @@ function makemenu(json){
 			if(day == serveur)
 			{
 				if(MidiSize>0)
-					html +="<li><img src=\"css/jour.jpg\" class=\"icons\"></img></li>"+
-							"<li id=\"EntréesM\"><img src=\"css/entree.png\" class=\"icons\"></img><p>"+EntréesMidi+"</p></li>" +
-							"<li id=\"PlatsM\"><img src=\"css/repas.png\" class=\"icons\"></img><p>"+PlatsMidi+"</p></li>" +
-							"<li id=\"LégumesM\"><img src=\"css/legume.png\" class=\"icons\"></img><p>"+ LégumesMidi+"</p></li>" +
-							"<li id=\"DessertsM\"><img src=\"css/dess.png\" class=\"icons\"></img><p>"+DessertsMidi+"</p></li>";
+					html +="<li><img src=\"css/1371832864_applications-science.png\" class=\"icons\"></img><p>Midi:</p></li>"+
+							"<li id=\"EntréesM\"><img src=\"css/1371832359_toast.png\" class=\"icons\"></img><p>Entrées:"+EntréesMidi+"</p></li>" +
+							"<li id=\"PlatsM\"><img src=\"css/1371831932_Space Food.png\" class=\"icons\"></img><p>Plats:"+PlatsMidi+"</p></li>" +
+							"<li id=\"LégumesM\"><img src=\"css/1371831994_pepper.png\" class=\"icons\"></img><p>Légumes:"+ LégumesMidi+"</p></li>" +
+							"<li id=\"DessertsM\"><img src=\"css/1371831883_strawberry_ice_cream.png\" class=\"icons\"></img><p>Desserts:"+DessertsMidi+"</p></li>";
 				else 
 					html += "<li><p><span style='text-decoration:underline' >Midi</span> : Pas de service</p></li>";
 				if(SoirSize>0)
-					html+="<li><img src=\"css/soir.png\" class=\"icons\"></img></li>"+
-							"<li id=\"EntréesSoir\"><img src=\"css/entree.png\" class=\"icons\"></img><p>"+EntréesSoir+"</p></li>" +
-							"<li id=\"Plats\"><img src=\"css/repas.png\" class=\"icons\"></img><p>"+PlatsSoir+"</p></li>" +
-							"<li id=\"Légumes\"><img src=\"css/legume.png\" class=\"icons\"></img><p>"+ LégumesSoir+"</p></li>" +
-							"<li id=\"Desserts\"><img src=\"css/dess.png\" class=\"icons\"></img><p>"+DessertsSoir+"</p></li>";
+					html+="<li><img src=\"css/1371832845_weather-few-clouds-night.png\" class=\"icons\"></img><p>Soir:</p></li>"+
+							"<li id=\"EntréesSoir\"><img src=\"css/1371832359_toast.png\" class=\"icons\"></img><p>Entrées:"+EntréesSoir+"</p></li>" +
+							"<li id=\"Plats\"><img src=\"css/1371831932_Space Food.png\" class=\"icons\"></img><p>Plats:"+PlatsSoir+"</p></li>" +
+							"<li id=\"Légumes\"><img src=\"css/1371831994_pepper.png\" class=\"icons\"></img><p>Légumes:"+ LégumesSoir+"</p></li>" +
+							"<li id=\"Desserts\"><img src=\"css/1371831883_strawberry_ice_cream.png\" class=\"icons\"></img><p>Desserts:"+DessertsSoir+"</p></li>";
 		
 				else 
 					html += "<li><p class=\"soir\"><span style='text-decoration:underline' ><h4>Soir</span> : Pas de service</h4></p></li>";
