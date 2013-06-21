@@ -14,6 +14,12 @@
 				$.mobile.page.prototype.options.domCache = true;
 				$.mobile.allowCrossDomainPages = true;
 			});
+			
+			window.setTimeout(function() {
+			    $(".alert-message").fadeTo(500, 0).slideUp(500, function(){
+			        $(this).remove(); 
+			    });
+			}, 5000);
 		</script>
 		<style>
 		#mapholder {

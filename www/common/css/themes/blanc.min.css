@@ -673,6 +673,10 @@ th {
 	font-size: 22px;
 
 }
+
+.rssBody {
+	color:#636363 !important;
+}
 .rssBody li{
 	border-radius: 0.6em 0.6em 0.6em 0.6em;
 	border: 2px #636363 !important;
