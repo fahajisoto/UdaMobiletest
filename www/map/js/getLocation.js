@@ -48,8 +48,6 @@ function getLocation() {
 					title:"loading...",
 					content:"chargement...",
 					type:"info",
-				   // autoClose: "true",
-//				    showButtons:false,
 				    opacity:0.9
 				});
 				$('#Loading').show();
