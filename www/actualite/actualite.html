@@ -16,29 +16,12 @@
 				$.mobile.defaultPageTransition = "slide";
 			});
 			$(document).ready(function () {
-
-				$.msgBox({ type: "prompt",
-				    title: "Abonement",
-				    inputs: [
-				    { header: "UdA", type: "checkbox", name: "UdA", value: "uda" },
-				    { header: "info T2C", type: "checkbox", name: "infoT2C", value: "inf"},
-				    { header: "brèves T2C", type: "checkbox", name: "brèves T2C", value: "bre"},
-				    { header: "evenements T2C", type: "checkbox", name: "evenements T2C", value: "eve"},
-				    { header: "Enregistrer mes modifications", type: "checkbox", name: "rememberMe", value: "theValue"}],
-				    buttons: [{ value: "register" }, {value:"Cancel"}],
-				    success: function (result, values) {
-				    	/*if(result=="register"){
-				    		
-				    		window.location="#contentpage";
-				    	}*/
-
-				        var v = result + " has been clicked\n";
-				        $(values).each(function (index, input) {
-				            v += input.name + " : " + input.value + (input.checked != null ? (" - checked: " + input.checked) : "") + "\n";
-				        });
-				        alert(v);
-				    }
-				});
+				var i=0;
+				var u=new Array;
+				$('#uda').hide();	
+				$('#info').hide();	
+				$('#breves').hide();	
+				$('#evenements').hide();	
 				$('#uda').rssfeed('http://www.u-clermont1.fr/feed', {
 				    limit: 5
 				});
@@ -52,6 +35,48 @@
 				$('#evenements').rssfeed('http://www.t2c.fr/evenements.xml', {
 				    limit: 5
 				});
+				
+				$.msgBox({ type: "prompt",
+				    title: "Abonement",
+				    inputs: [
+				    { header: "UdA", type: "checkbox", name: "UdA", value: "uda" },
+				    { header: "info T2C", type: "checkbox", name: "infoT2C", value: "info" },
+				    { header: "brèves T2C", type: "checkbox", name: "brèves T2C", value: "breves" },
+				    { header: "evenements T2C", type: "checkbox", name: "evenements T2C", value: "evenements" },
+				    { header: "Enregistrer mes modifications", type: "checkbox", name: "rememberMe", value: "theValue"}],
+				    buttons: [{ value: "register" }, {value:"Cancel"}],
+				    success: function (result, values) {
+				    	if(result=="register"){
+				    		
+				    		window.location="#contentpage";
+				    	}
+				        var v = result + " has been clicked\n";
+				        $(values).each(function (index, input) {
+				        	
+				            v += input.name + " : " + input.value + (input.checked != null ? (" - checked: " + input.checked) : "") + "\n";
+				            
+				            if(input.checked=="checked"){
+				            	u[i]="'#"+input.value+"'";
+				            	alert(u[i]);
+				            	i++;
+				            	$(u).show();
+				      		  }
+
+				        });
+				        alert(u);
+				        alert(i);
+				        
+
+				        alert(v);
+				    }
+				});
+				
+		        for(var j=0;j<i;j++){
+				      
+	        		alert("j"+u[j]);
+	     	   }
+		       
+
 				 
 			});
 		</script>
@@ -87,10 +112,10 @@
 					<p>les actualites</p>
 				</div>
 
-					<div><a data-role="button" href="#contentpage" data-transition="slide" data-shadow="true" data-ajax="false">UdA</a></div>
-					<div><a data-role="button" href="#contentpage" data-transition="slide" data-shadow="true" data-ajax="false">info trafic T2C</a></div>
-					<div><a data-role="button" href="#contentpage" data-transition="slide" data-shadow="true" data-ajax="false">brèves T2C</a></div>
-					<div><a data-role="button" href="#contentpage" data-transition="slide" data-shadow="true" data-ajax="false">evenements T2C</a></div>
+					<div><a data-role="button" href="#contentpage" onclick="$('#uda').show();"data-transition="slide" data-shadow="true" data-ajax="false">UdA</a></div>
+					<div><a data-role="button" href="#contentpage" onclick="$('#info').show();" data-transition="slide" data-shadow="true" data-ajax="false">info trafic T2C</a></div>
+					<div><a data-role="button" href="#contentpage" onclick="$('#breves').show();"data-transition="slide" data-shadow="true" data-ajax="false">brèves T2C</a></div>
+					<div><a data-role="button" href="#contentpage" onclick="$('#evenements').show();"data-transition="slide" data-shadow="true" data-ajax="false">evenements T2C</a></div>
 					<div class="annuaire" id="div"></div>	
 				
 			
@@ -101,15 +126,6 @@
 		</div>
 		</div>
 		</div>
-		<script>
-
-
-			var countChecked = function() {
-
-			};
-			countChecked();
-			$( "input[type=checkbox]" ).on( "click", countChecked );
-		</script>
 		
 		<div data-role="page" id="contentpage" >
 			<div id="uda_header" data-role="header" data-position="fixed">

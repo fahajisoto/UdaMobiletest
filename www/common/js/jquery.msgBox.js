@@ -1,24 +1,16 @@
-/*
-jQuery.msgBox plugin 
-Copyright 2011, Halil İbrahim Kalyoncu
-License: BSD
-modified by Oliver Kopp, 2012.
- * added support for configurable image paths
- * a new msgBox can be shown within an existing msgBox
-*/
-
-/*
-contact :
-
-halil@ibrahimkalyoncu.com
-koppdev@googlemail.com
-
-*/
-
-// users may change this variable to fit their needs
 var msgBoxImagePath = "../common/css/images/";
 
 jQuery.msgBox = msg;
+
+function checkOrNot(input) {
+	if(input.checked) {
+		$(input).attr("checked", "checked");
+	}
+	else {
+		$(input).removeAttr("checked");
+	}
+}
+
 function msg (options) {
     var isShown = false;
     var typeOfValue = typeof options;
@@ -62,7 +54,7 @@ function msg (options) {
                 image = "alert.png";
         }
     }
-    options.timeOut = options.timeOut == null ? (options.content == null ? 500 : options.content.length * 70) : options.timeOut;
+    options.timeOut = options.timeOut == null ? (options.content == null ? 500 : options.content.length * 2000) : options.timeOut;
     options = $.extend(defaults, options);
     if (options.autoClose) {
         setTimeout(hide, options.timeOut);
@@ -102,9 +94,8 @@ function msg (options) {
     $(options.inputs).each(function (index, input) {
         var type = input.type;
         if (type=="checkbox" || type =="radiobutton") {
-        	alert(input.checked);
             inputs += "<div class=\"msgInput\">" +
-            "<input type=\"" + input.type + "\" name=\"" + input.name + "\" "+(input.checked == null ? "" : "checked ='"+input.checked+"'")+" value=\"" + (typeof input.value == "undefined" ? "" : input.value) + "\" />" +
+            "<input type=\"" + input.type + "\" onclick=\"checkOrNot(this)\" name=\"" + input.name + "\" "+(input.checked == null ? "" : "checked ='"+input.checked+"'")+" value=\"" + (typeof input.value == "undefined" ? "" : input.value) + "\" />" +
             "<text>"+input.header +"</text>"+
             "</div>";
         }
@@ -223,7 +214,6 @@ function msg (options) {
                 var value = $(this).val();
                 var type = $(this).attr("type");
                 if (type == "checkbox" || type == "radiobutton") {
-                	alert($(this).attr("checked"));
                     inputValues.push({ name: name, value: value,checked: $(this).attr("checked")});
                 }
                 else {
