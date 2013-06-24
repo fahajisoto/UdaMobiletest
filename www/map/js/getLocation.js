@@ -43,7 +43,15 @@ function initialize() {
 
 function getLocation() {
 				//window.location='map.html';
-				alert("Loading, please wait...");
+			
+				$.msgBox({
+					title:"loading...",
+					content:"chargement...",
+					type:"info",
+				    autoClose: "true",
+				    showButtons:false,
+				    opacity:0.9
+				});
 				$('#Loading').show();
 				$("#mapholder").css({ opacity: 0, zoom: 0 });
 				if (navigator.geolocation)

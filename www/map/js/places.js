@@ -211,7 +211,14 @@ function init_itineraire(lat,lan){
 
 function getLocation() 
 {
-	alert("Loading, please wait...");
+	$.msgBox({
+		title:"loading...",
+		content:"chargement...",
+		type:"info",
+	    autoClose: "true",
+	    showButtons:false,
+	    opacity:0.9
+	});
 	$("#mapholder").css({ opacity: 0, zoom: 0 });
 	if (navigator.geolocation)
 		{
