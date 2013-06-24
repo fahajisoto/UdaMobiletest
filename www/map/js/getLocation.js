@@ -48,7 +48,9 @@ function getLocation() {
 					title:"loading...",
 					content:"chargement...",
 					type:"info",
-				    opacity:0.9
+				    opacity:0.9,
+				    showButtons:false,
+				    autoClose:true
 				});
 				$('#Loading').show();
 				$("#mapholder").css({ opacity: 0, zoom: 0 });

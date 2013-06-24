@@ -5,10 +5,10 @@
 		<meta name="viewport" content="user-scalable=no, width=device-width, height=device-height, initial-scale=1, minimum-scale=1,  maximum-scale=1"/> 
 		<meta charset="utf-8">
 		<script src="../common/js/jquery-1.9.1.min.js"> </script>
+		<script src="../common/js/jquery.msgBox.js"> </script>
 		<link rel="stylesheet" href="../common/css/themes/blanc.min.css" />
 		<link rel="stylesheet" href="../common/css/jquery.mobile.structure-1.3.1.min.css" /> 
 		<link rel="stylesheet" href="../common/css/msgBoxLight.css" />
-		<script src="../common/js/jquery.msgBox.js"> </script>
 		<script type="text/javascript">
 			$(document).bind('mobileinit', function(){
 				$.mobile.allowCrossDomainPages = true;
@@ -20,23 +20,21 @@
 				$.msgBox({ type: "prompt",
 				    title: "Abonement",
 				    inputs: [
-				    { header: "UdA", type: "checkbox", name: "UdA" },
-				    { header: "info T2C", type: "checkbox", name: "infoT2C" },
-				    { header: "brèves T2C", type: "checkbox", name: "brèves T2C" },
-				    { header: "evenements T2C", type: "checkbox", name: "evenements T2C" },
+				    { header: "UdA", type: "checkbox", name: "UdA", value: "uda" },
+				    { header: "info T2C", type: "checkbox", name: "infoT2C", value: "inf"},
+				    { header: "brèves T2C", type: "checkbox", name: "brèves T2C", value: "bre"},
+				    { header: "evenements T2C", type: "checkbox", name: "evenements T2C", value: "eve"},
 				    { header: "Enregistrer mes modifications", type: "checkbox", name: "rememberMe", value: "theValue"}],
 				    buttons: [{ value: "register" }, {value:"Cancel"}],
 				    success: function (result, values) {
-				    	if(result=="register"){
+				    	/*if(result=="register"){
 				    		
 				    		window.location="#contentpage";
-				    	}
+				    	}*/
 
 				        var v = result + " has been clicked\n";
 				        $(values).each(function (index, input) {
-				            v += input.name + " : " + input.value + 
-				            (input.checked != null ? (" - checked: " + input.checked) : "") + "\n";
-				            alert(input.checked);
+				            v += input.name + " : " + input.value + (input.checked != null ? (" - checked: " + input.checked) : "") + "\n";
 				        });
 				        alert(v);
 				    }
