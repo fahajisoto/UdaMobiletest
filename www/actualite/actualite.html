@@ -16,8 +16,7 @@
 				$.mobile.defaultPageTransition = "slide";
 			});
 			$(document).ready(function () {
-				var i=0;
-				var u=new Array;
+
 				$('#uda').hide();	
 				$('#info').hide();	
 				$('#breves').hide();	
@@ -53,29 +52,19 @@
 				        var v = result + " has been clicked\n";
 				        $(values).each(function (index, input) {
 				        	
-				            v += input.name + " : " + input.value + (input.checked != null ? (" - checked: " + input.checked) : "") + "\n";
-				            
+				            v += input.name + " : " + input.value + (input.checked != null ? (" - checked: " + input.checked) : "") + "\n";		            
+				            if(input.name=="rememberMe" && input.checked=="checked"){
+				            	
+				            }
 				            if(input.checked=="checked"){
-				            	u[i]="'#"+input.value+"'";
-				            	alert(u[i]);
-				            	i++;
-				            	$(u).show();
-				      		  }
+				            	$('#'+input.value).show();
+				      		}
 
 				        });
-				        alert(u);
-				        alert(i);
-				        
-
-				        alert(v);
+				
+				      //  alert(v);
 				    }
 				});
-				
-		        for(var j=0;j<i;j++){
-				      
-	        		alert("j"+u[j]);
-	     	   }
-		       
 
 				 
 			});
