@@ -127,6 +127,14 @@ function makeList(json) {
 
 }
 function makeaddress(nom,address,code,desc,lat,lon){
+	$.msgBox({
+		title:"loading...",
+		content:"chargement de l'itineraire...",
+		type:"info",
+	    opacity:0.9,
+	    showButtons:false,
+	    autoClose:true
+	});
 	nomResto=unescape(nom);
 	Radresse=unescape(address);
 	Rcode_postal=code;

@@ -54,7 +54,7 @@ function msg (options) {
                 image = "alert.png";
         }
     }
-    options.timeOut = options.timeOut == null ? (options.content == null ? 500 : options.content.length * 1000) : options.timeOut;
+    options.timeOut = options.timeOut == null ? (options.content == null ? 500 : options.content.length * 150) : options.timeOut;
     options = $.extend(defaults, options);
     if (options.autoClose) {
         setTimeout(hide, options.timeOut);
