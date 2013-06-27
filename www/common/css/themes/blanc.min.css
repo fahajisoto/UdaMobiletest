@@ -529,12 +529,17 @@ a.ui-link-inherit {
 	text-align: center;
 }
 
+#uda_header  {
+	margin: 0;
+	padding: 0;
+	height:10% !important;
+}
 
 
 #uda_header img {
 	margin: 0;
 	padding: 0;
-	width: 100%;
+
 }
 
 #page_footer {
