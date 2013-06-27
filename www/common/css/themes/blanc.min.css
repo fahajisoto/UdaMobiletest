@@ -542,7 +542,7 @@ a.ui-link-inherit {
 
 #page_footer {
 	background-image: url('images/footer.png');
-	background-repeat: repeat-x, repeat-y;
+	background-repeat: repeat-x;
 	height: 15% !important;
 	width: 100% !important;
 	margin: 0;
@@ -571,7 +571,6 @@ a.ui-link-inherit {
 	margin: 0px;
 	padding: 0px;
 	text-align: center;
-	height: 40% !important;
 	width: 100% !important;
 }
 
@@ -616,7 +615,6 @@ table{
 		text-align: center;
 		color:#67abca !important;
 		border-collapse: collapse;
-		background-image: url('images/background_home.png') !important;
 }
 
 th {
