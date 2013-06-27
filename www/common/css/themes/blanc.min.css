@@ -549,6 +549,7 @@ a.ui-link-inherit {
 #page_footer a {
 	background: none;
 	border: none;
+	height:100%;
 	text-decoration: none;
 	align: center;
 	display: inline-block;
