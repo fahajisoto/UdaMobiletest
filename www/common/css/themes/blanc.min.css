@@ -550,6 +550,7 @@ a.ui-link-inherit {
 	background: none;
 	border: none;
 	height:100%;
+	max_width: 24%;
 	text-decoration: none;
 	align: center;
 	display: inline-block;
