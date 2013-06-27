@@ -549,16 +549,12 @@ a.ui-link-inherit {
 #page_footer a {
 	background: none;
 	border: none;
-	height:100%;
-	max_width: 24%;
+	height:90%;
 	text-decoration: none;
 	align: center;
 	display: inline-block;
 	margins: 0px !important;
-	padding-right: 1%;
-	padding-left: 1%;
-	padding-up: 0px;
-	padding-down: 0px;
+	padding:0;
 }
 
 .mainPage {
