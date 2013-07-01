@@ -528,14 +528,14 @@ a.ui-link-inherit {
 	width: 100%;
 	text-align: center;
 }
-
+/*
 #uda_header  {
 	margin: 0;
 	padding: 0;
 	height:10% !important;
 	text-align: center;
 }
-
+*/
 
 #uda_header img {
 	margin: 0;
@@ -568,6 +568,7 @@ a.ui-link-inherit {
 	text-align: center;
 	width: 100% !important;
 	height: 100% !important;
+	overflow:hidden;
 }
 
 #maintable {
@@ -700,3 +701,59 @@ html,body {
 body.loading .Loading {
 	display: block;
 }
+
+
+
+
+
+#uda_header{
+	text-align: center;
+width:100%;
+position:relative;
+z-index: 20;
+box-shadow: 0 0 10px white;
+}
+
+.scrollable {
+   position:absolute; // instead of relative
+   overflow:hidden;
+   width: 100%;
+   top:0;
+   bottom:0;// instead of height: 100%;
+   box-shadow: 0 0 20px purple;
+   /*  height:198px; */
+   z-index: 20;
+}
+
+
+.scrollable .items {
+
+width:1000%;
+position:absolute;
+clear:both;
+box-shadow: 0 0 30px green;
+
+}
+
+.items div {
+float:left;
+width:10%;
+height:100%;
+
+}
+
+.scrollable img {
+    float:left;
+    width:100%;
+   height: auto;
+
+}
+
+.scrollable .active {
+    border:2px solid #000;
+    position:relative;
+    cursor:default;
+}
+
+
+
