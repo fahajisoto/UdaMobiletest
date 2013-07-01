@@ -576,6 +576,7 @@ a.ui-link-inherit {
 	text-align: center;
 	margin:0;
 	padding:0;
+width: 100% !important;
 }
 
 #maintable a {
@@ -755,5 +756,21 @@ height:100%;
     cursor:default;
 }
 
+#mainNavbar{
+	border: none !important;
+	text-align: center !important;
+	margin:0 !important;
+	padding:0 !important;
+	width: 100% !important;
+	height: 100% !important;
+	color:#67abca !important;	
+}
 
-
+#mainNavbar a{
+	background: none !important;
+	position:relative;
+	border: none !important;
+	height: 20% !important;	
+	min-width:15% !important;
+	max-width:40%;
+}
