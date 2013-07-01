@@ -567,7 +567,7 @@ a.ui-link-inherit {
 	padding: 0px;
 	text-align: center;
 	width: 100% !important;
-	height: 100% !important;
+	height: 98% !important;
 	overflow:hidden;
 }
 
@@ -761,8 +761,6 @@ height:100%;
 	text-align: center !important;
 	margin:0 !important;
 	padding:0 !important;
-	width: 100% !important;
-	height: 100% !important;
 	color:#67abca !important;	
 }
 
@@ -771,6 +769,5 @@ height:100%;
 	position:relative;
 	border: none !important;
 	height: 20% !important;	
-	min-width:15% !important;
-	max-width:40%;
+	max-width:40% !important;
 }
