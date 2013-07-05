@@ -528,14 +528,14 @@ a.ui-link-inherit {
 	width: 100%;
 	text-align: center;
 }
-/*
+
 #uda_header  {
 	margin: 0;
 	padding: 0;
 	height:10% !important;
 	text-align: center;
 }
-*/
+
 
 #uda_header img {
 	margin: 0;
@@ -560,11 +560,12 @@ a.ui-link-inherit {
 	display: inline-block;
 	margins: 0px !important;
 	padding:0;
+	height:100%;
 }
 
 .mainPage {
-	margin: 0px;
-	padding: 0px;
+	margin: 0px !important;
+	padding: 0px !important;
 	text-align: center;
 	width: 100% !important;
 	height: 98% !important;
