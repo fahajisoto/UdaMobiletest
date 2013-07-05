@@ -17,16 +17,16 @@
                 $('#evenements').hide();   
 				
 				$('#uda').rssfeed('http://www.u-clermont1.fr/feed', {
-				    limit: 5
+				    limit: 10
 				});
 				$('#info').rssfeed('http://www.t2c.fr/infos-trafic.xml', {
-				    limit: 5
+				    limit: 10
 				});
 				$('#breves').rssfeed('http://www.t2c.fr/breves.xml', {
-				    limit: 5
+				    limit: 10
 				});
 				$('#evenements').rssfeed('http://www.t2c.fr/evenements.xml', {
-				    limit: 5
+				    limit: 10
 				});
 				
 				if(localStorage.getItem('rememberMe') != 'checked') {
@@ -100,9 +100,9 @@
 				</div>
 			</div>
 			<div id="page_footer" data-role="footer" data-position="fixed"  >
-				<a href="../restaurant/restaurant2.html" data-ajax="false"><img src="../common/css/icons/140x140_restauration.png" height="50%" width="auto"/></a>
-				<a href="../map/map.html" data-ajax="false"><img src="../common/css/icons/140x140_carte.png" height="50%" width="auto"/></a>
-				<a  href="../annuaire/annuaire.html" data-transition="slide"data-ajax="false"><img src="../common/css/icons/140x140_annuaire.png" height="50%" width="auto"/></a>	
+				<a href="../restaurant/restaurant2.html" data-ajax="false"><img src="../common/css/icons/140x140_restauration.png" width="70%" /></a>
+				<a href="../map/map.html" data-ajax="false"><img src="../common/css/icons/140x140_carte.png"width="70%" /></a>
+				<a  href="../annuaire/annuaire.html" data-transition="slide"data-ajax="false"><img src="../common/css/icons/140x140_annuaire.png"width="70%" /></a>	
 			</div>
 		</div>
 	
@@ -124,10 +124,10 @@
 				<div class="annuaire" id="breves"></div>
 				<div class="annuaire" id="evenements"></div>	
 	    	</div>
-	    	<div id="page_footer" data-role="footer" data-position="fixed"  >
-				<a href="../restaurant/restaurant2.html" data-ajax="false"><img src="../common/css/icons/140x140_restauration.png" height="50%" width="auto"/></a>
-				<a href="../map/map.html" data-ajax="false"><img src="../common/css/icons/140x140_carte.png" height="50%" width="auto"/></a>
-				<a  href="../annuaire/annuaire.html" data-transition="slide"data-ajax="false"><img src="../common/css/icons/140x140_annuaire.png" height="50%" width="auto"/></a>	
+	    	<div id="page_footer" data-role="footer" data-position="fixed">
+				<a href="../restaurant/restaurant2.html" data-ajax="false"><img src="../common/css/icons/140x140_restauration.png"width="70%" /></a>
+				<a href="../map/map.html" data-ajax="false"><img src="../common/css/icons/140x140_carte.png" width="70%" /></a>
+				<a  href="../annuaire/annuaire.html" data-transition="slide"data-ajax="false"><img src="../common/css/icons/140x140_annuaire.png" width="70%" /></a>	
 			</div>
 		</div>
 	</body>
