@@ -599,9 +599,6 @@ th {
 	text-align: center;
 	text-color: #67abca;
 }
-#search_table td{
-	margin-top: 10% !important;
-}
 #mapholder {
 	padding-top:11%;
 	padding-bottom:20%;
@@ -660,7 +657,7 @@ th {
 }
 .contents{
 	margin: 0;
-	padding-bottom: 20% !important;
+	padding:0;
 	text-align: center;
 	display: block;
 }

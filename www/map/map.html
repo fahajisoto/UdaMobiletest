@@ -26,15 +26,14 @@
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=true&amp;libraries=places"></script>
 		<style>
 			#mapholder {
-				padding-top:11%;
-				padding-bottom:20% !important;			
+	
 				height:60%;
 			}
 		</style>
 	</head>
 	<body onLoad="initialize();getLocation()">
 		<!-- MAIN PAGE -->
-		<div id="mainPage" data-role="page" data-theme="a" class="mainPage">
+		<div id="mainPage" data-role="page" data-theme="a">
 			<div id="uda_header" data-role="header" data-position="fixed">
 				<div data-role="navbar">
 					<ul>
@@ -44,14 +43,13 @@
 					</ul>
 				</div>
 			</div>
-			<div data-role="content" data-theme="a">
-				<table id="search_table"><tr><td>
-					<input id="searchTextField" type="text" size="49"></td><td>
-					<a data-role="button" ontouchstart="search_er()"data-transition="slide" ><img src="../common/css/icons/2search-icon.png"/></a></td></tr> 
-				</table>
+			<div data-theme="a" class="contents">
+					<input id="searchTextField" type="text" size="49">
+					<a data-role="button" ontouchstart="search_er()"data-transition="slide" ><img src="../common/css/icons/2search-icon.png"/></a>
+				</div>
 				<div id="Loading"><img src="../icons/loading.gif" height="100%" width="100%"/></div> 
 				<div id="mapholder"></div>
-			</div>
+		
 			<div id="page_footer" data-role="footer" data-position="fixed">
 				<a href="../restaurant/restaurant2.html" data-ajax="false"><img src="../common/css/icons/140x140_restauration.png"/></a>
 				<a href="../actualite/actualite.html" data-ajax="false"><img src="../common/css/icons/140x140_actualites.png"/></a>
