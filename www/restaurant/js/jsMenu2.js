@@ -13,7 +13,7 @@ var Radresse;
 var Rcode_postal;
 var Rdescription;
 var nomResto;
-var day;
+var day= new Array;
 var today = new Date();
 var m;
 var numero=today.getDate();
@@ -161,16 +161,20 @@ function setdate(){
 	TabMois = new Array("janvier","février","mars","avril","mai","juin","juillet","aout","septembre","octobre","novembre","décembre");
 	messageDate = TabJour[jour] + " " + numero + " " + TabMois[month];
 	$('#pdate').html(messageDate);
-	month=month+1;
-	if (month>9)
+	//month=month+1;
+	
+	if (month>9){
 		day = today.getFullYear()+"-"+month+"-"+numero;
-	else
+	}
+	else{
 		day = today.getFullYear()+"-0"+month+"-"+numero;
+	}
 }
 
 function menu(iter) {
 	//recuperation du tableau des resto
 	m=iter;
+	//alert(day);
 	$.ajax({
 		url:"http://udamobile.u-clermont1.fr/v2/restaurant/?menu="+m+"&token=2a2a504c2d&date="+day,
 		type: "GET",
