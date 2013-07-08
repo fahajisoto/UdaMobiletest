@@ -496,13 +496,11 @@ a.ui-link-inherit {
 	box-shadow: 0 0 12px #fafafa;
 	color: #fafafa;
 }
-
 .ui-mobile-nosupport-boxshadow * {
 	-moz-box-shadow: none !important;
 	-webkit-box-shadow: none !important;
 	box-shadow: none !important;
 }
-
 .ui-mobile-nosupport-boxshadow .ui-focus,.ui-mobile-nosupport-boxshadow .ui-btn:focus,.ui-mobile-nosupport-boxshadow .ui-link-inherit:focus
 	{
 	outline-width: 1px;
@@ -511,15 +509,11 @@ a.ui-link-inherit {
 	margin: 0;
 	padding: 0;
 }
-
 @media print {
 	html,body {
 		height: auto;
-	
 	}
-
 }
-
 .Loading {
 	display: none;
 	position: fixed;
@@ -528,21 +522,16 @@ a.ui-link-inherit {
 	width: 100%;
 	text-align: center;
 }
-
 #uda_header  {
 	margin: 0;
 	padding: 0;
 	height:10% !important;
 	text-align: center;
 }
-
-
 #uda_header img {
 	margin: 0;
 	padding: 0;
-
 }
-
 #page_footer {
 	background-image: url('images/footer.png');
 	background-repeat: no-repeat;
@@ -551,7 +540,6 @@ a.ui-link-inherit {
 	padding: 0;
 	text-align: center;
 }
-
 #page_footer a {
 	background: none;
 	border: none;
@@ -562,7 +550,6 @@ a.ui-link-inherit {
 	padding:0;
 	height:100%;
 }
-
 .mainPage {
 	margin: 0px !important;
 	padding: 0px !important;
@@ -571,58 +558,47 @@ a.ui-link-inherit {
 	height: 98% !important;
 	overflow:hidden;
 }
-
 #maintable {
 	border-collapse: collapse;
 	text-align: center;
 	margin:0;
 	padding:0;
-width: 100% !important;
+	width: 100% !important;
 }
-
 #maintable a {
 	text-align: center;
 	margin: 0;
 }
-
 .ui-block-a {
 	font-weight: bold;
 	text-align: center;
 }
-
 .ui-content {
 	text-align: center;
 	padding: 0px;
 	margin: 0px;
 }
-
 .ui-content a {
 	margin: 0px;
 	padding: 0px;
 }
-
-
 table{
-		height: 100% !important;
-		width: 100% !important;
-		margin: 0;
-		padding: 0;
-		text-align: center;
-		color:#67abca !important;
-		border-collapse: collapse;
+	height: 100% !important;
+	width: 100% !important;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	color:#67abca !important;
+	border-collapse: collapse;
 }
-
 th {
-
 	font-weight: bold;
 }
-
 #maintable td,th {
 	border: none;
 	text-align: center;
 	text-color: #67abca;
 }
-
 #mapholder {
 	padding-top:11%;
 	padding-bottom:20%;
@@ -637,11 +613,9 @@ th {
 	background: transparent;
 	color: #67abca;
 }
-
 #listAnnu{
 	background: transparent !important;
 	color: ##636363 !important;
-	
 }
 #listAnnu li{
 	border: 1px #000;
@@ -658,14 +632,13 @@ th {
 	margins: 1px !important;	
 }
 .icon{
-
 	text-align: center;
 	text-shadow: none !important;
 	color:#67abca !important;
 	font-size: 22px;
-	height:5%;
-}
 
+	display: block;
+}
 .rssBody {
 	color:#636363 !important;
 }
@@ -676,21 +649,18 @@ th {
 	color:#636363 !important;
 	text-align: left !important;
 	margins: 1px !important;	
-	
 }
-
 @font-face
 {
 	font-family: Shanti;
 	src: url('Shanti-Regular.ttf');
 }
-
 .contents{
 	margin: 0;
 	padding-bottom: 20% !important;
 	text-align: center;
+	display: block;
 }
-
 html,body {
 	background-image: url('images/background_home.png') !important;
 	font-family: Shanti !important;
@@ -698,24 +668,18 @@ html,body {
 	height: 100% !important;
 	padding: 0;
 	margin: 0;
+	display:block;
 }
-
 body.loading .Loading {
 	display: block;
 }
-
-
-
-
-
 #uda_header{
 	text-align: center;
-width:100%;
-position:relative;
-z-index: 20;
-box-shadow: 0 0 10px white;
+	width:100%;
+	position:relative;
+	z-index: 20;
+	box-shadow: 0 0 10px white;
 }
-
 .scrollable {
    position:absolute; // instead of relative
    overflow:hidden;
@@ -726,37 +690,27 @@ box-shadow: 0 0 10px white;
    /*  height:198px; */
    z-index: 20;
 }
-
-
 .scrollable .items {
-
-width:1000%;
-position:absolute;
-clear:both;
-box-shadow: 0 0 30px green;
-
+	width:100%;
+	position:absolute;
+	clear:both;
+	box-shadow: 0 0 30px green;
 }
-
 .items div {
-float:left;
-width:10%;
-height:100%;
-
+	float:left;
+	width:10%;
+	height:100%;
 }
-
 .scrollable img {
     float:left;
     width:100%;
    height: auto;
-
 }
-
 .scrollable .active {
     border:2px solid #000;
     position:relative;
     cursor:default;
 }
-
 #mainNavbar{
 	border: none !important;
 	text-align: center !important;
@@ -764,7 +718,6 @@ height:100%;
 	padding:0 !important;
 	color:#67abca !important;	
 }
-
 #mainNavbar a{
 	background: none !important;
 	position: relative;
@@ -772,4 +725,3 @@ height:100%;
 	height: 20% !important;	
 	max-width:40% !important;
 }
-
