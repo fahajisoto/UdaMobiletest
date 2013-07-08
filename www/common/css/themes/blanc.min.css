@@ -599,6 +599,9 @@ th {
 	text-align: center;
 	text-color: #67abca;
 }
+#search_table td{
+	margin-top: 10% !important;
+}
 #mapholder {
 	padding-top:11%;
 	padding-bottom:20%;
@@ -676,7 +679,6 @@ body.loading .Loading {
 #uda_header{
 	text-align: center;
 	width:100%;
-	z-index: 20;
 	box-shadow: 0 0 10px white;
 }
 .scrollable {

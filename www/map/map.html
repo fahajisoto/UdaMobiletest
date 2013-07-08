@@ -43,15 +43,16 @@
 						<li><a data-rel="back" data-direction="reverse" ><img src="../common/css/icons/back_button.png" ></a></li>
 					</ul>
 				</div>
-				<input id="end" type="hidden" value=""/>
-			</div>	
-			<div>
-				<input id="searchTextField" type="text" size="49">
-				<a data-role="button" ontouchstart="search_er()"data-transition="slide" ><img src="../common/css/icons/2search-icon.png"/></a> 
 			</div>
-			<div id="Loading"><img src="../icons/loading.gif" height="100%" width="100%"/></div> 
-			<div id="mapholder"></div>
-			<div id="page_footer" data-role="footer" data-position="fixed"  >
+			<div data-role="content" data-theme="a">
+				<table id="search_table"><tr><td>
+					<input id="searchTextField" type="text" size="49"></td><td>
+					<a data-role="button" ontouchstart="search_er()"data-transition="slide" ><img src="../common/css/icons/2search-icon.png"/></a></td></tr> 
+				</table>
+				<div id="Loading"><img src="../icons/loading.gif" height="100%" width="100%"/></div> 
+				<div id="mapholder"></div>
+			</div>
+			<div id="page_footer" data-role="footer" data-position="fixed">
 				<a href="../restaurant/restaurant2.html" data-ajax="false"><img src="../common/css/icons/140x140_restauration.png"/></a>
 				<a href="../actualite/actualite.html" data-ajax="false"><img src="../common/css/icons/140x140_actualites.png"/></a>
 				<a  href="../annuaire/annuaire.html" data-ajax="false"><img src="../common/css/icons/140x140_annuaire.png"/></a>	
