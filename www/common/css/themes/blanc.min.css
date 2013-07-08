@@ -676,7 +676,6 @@ body.loading .Loading {
 #uda_header{
 	text-align: center;
 	width:100%;
-	position:relative;
 	z-index: 20;
 	box-shadow: 0 0 10px white;
 }
