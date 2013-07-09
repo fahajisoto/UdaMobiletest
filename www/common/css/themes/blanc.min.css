@@ -138,8 +138,7 @@
 	background-image: linear-gradient(#000000, #fafafa);
 }
 
-.ui-btn-down-a:visited,.ui-btn-down-a:hover,.ui-btn-down-a a.ui-link-inherit
-	{
+.ui-btn-down-a:visited,.ui-btn-down-a:hover,.ui-btn-down-a a.ui-link-inherit{
 	color: #2f3e46;
 }
 

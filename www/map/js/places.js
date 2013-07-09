@@ -15,7 +15,46 @@ var end;
 var distance;
 var latitude=new Array;
 var longitude=new Array;
+var listAttribute;
 
+function set_attribute(list){
+	switch(list){
+	case 'universite':{
+		listAttribute='universite';
+		break;
+	}	
+
+	case 'sante':{	
+		listAttribute='sante';
+		break;
+	}
+		
+	case 'loisir':{
+		listAttribute='loisir';
+		break;
+	}
+	
+	case 'BU':{
+		listAttribute='BU';
+		break;
+	}
+	
+	case 'resto':{
+		listAttribute='resto';
+		break;
+	}
+
+	case 'heberg':{
+		listAttribute='heberg';
+		break;
+	 }	
+
+	case 'divers':{
+		listAttribute='divers';
+		break;
+	}
+	}
+}
 function listbuildings(list){
 	$('#listbuildings').hide();
 	$('#newlist').show();
@@ -200,7 +239,7 @@ $(document).on('click','#backButton', function() {
 	$('#EmplacementItineraireTexte').text("");
   });
 
-showAll
+
 function init_itineraire(lat,lan){
 	latitude[0]=lat;
 	longitude[0]=lan;
@@ -235,7 +274,7 @@ function showPosition(position)
 	longitude[1]=new google.maps.LatLng(position.coords.longitude);
 	initialize();
 	$('#mapholder').show();
-	$("#mapholder").css({ opacity: 1, zoom: 1 });
+
 	$("#listbuildings").hide();
 	$("#newlist").hide();
 	$("#header2").hide();
@@ -298,3 +337,79 @@ function initialize()
 	   
 }
 
+
+
+
+function showAll() {
+	address = new google.maps.LatLng(45.770584,3.087909);
+	 mapOptions = {
+			    zoom: 9,
+			    center: address,
+			    mapTypeId: google.maps.MapTypeId.ROADMAP
+			  }
+			  map = new google.maps.Map(document.getElementById('mapholder'), mapOptions);
+	  $('#mapholder').show();
+		$("#listbuildings").hide();
+		$("#newlist").hide();
+		$("#header2").hide();
+		$("#mapholder").css({ opacity: 1, zoom: 1 });
+	switch(listAttribute){
+		case 'universite':{
+		
+					  var ctaLayer = new google.maps.KmlLayer({
+					    url: 'https://sites.google.com/site/udamobilev2/kml/universite.kml?attredirects=0&d=1'
+					  });
+					  ctaLayer.setMap(map);
+
+			break;
+		}	
+	
+		case 'sante':{	
+			  var ctaLayer = new google.maps.KmlLayer({
+				    url: 'https://sites.google.com/site/udamobilev2/kml/sante.kml?attredirects=0&d=1'
+				  });
+				  ctaLayer.setMap(map);
+			break;
+		}
+			
+		case 'loisir':{
+			  var ctaLayer = new google.maps.KmlLayer({
+				    url: '../Images/loisir.kml'
+				  });
+				  ctaLayer.setMap(map);
+			break;
+		}
+		
+		case 'BU':{
+			  var ctaLayer = new google.maps.KmlLayer({
+				    url: 'https://sites.google.com/site/udamobilev2/kml/BU.kml?attredirects=0&d=1'
+				  });
+				  ctaLayer.setMap(map);
+			break;
+		}
+		
+		case 'resto':{
+			  var ctaLayer = new google.maps.KmlLayer({
+				    url: '../Images/resto.kml'
+				  });
+				  ctaLayer.setMap(map);
+			break;
+		}
+	
+		case 'heberg':{
+			  var ctaLayer = new google.maps.KmlLayer({
+				    url: '../Images/heberg.kml'
+				  });
+				  ctaLayer.setMap(map);
+			break;
+		 }	
+	
+		case 'divers':{
+			  var ctaLayer = new google.maps.KmlLayer({
+				    url: '../Images/divers.kml'
+				  });
+				  ctaLayer.setMap(map);
+			break;	
+		}
+	}
+}
