@@ -720,6 +720,6 @@ body.loading .Loading {
 	background: none !important;
 	position: relative;
 	border: none !important;
-	height: 20% !important;	
-	max-width:40% !important;
+	height: 30% !important;	
+	max-width:60% !important;
 }
