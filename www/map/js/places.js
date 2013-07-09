@@ -374,7 +374,7 @@ function showAll() {
 			
 		case 'loisir':{
 			  var ctaLayer = new google.maps.KmlLayer({
-				    url: '../Images/loisir.kml'
+				    url: 'https://sites.google.com/site/udamobilev2/kml/universite.kml?attredirects=0&d=1'
 				  });
 				  ctaLayer.setMap(map);
 			break;
@@ -390,7 +390,7 @@ function showAll() {
 		
 		case 'resto':{
 			  var ctaLayer = new google.maps.KmlLayer({
-				    url: '../Images/resto.kml'
+				    url: 'https://sites.google.com/site/udamobilev2/kml/universite.kml?attredirects=0&d=1'
 				  });
 				  ctaLayer.setMap(map);
 			break;
@@ -398,7 +398,7 @@ function showAll() {
 	
 		case 'heberg':{
 			  var ctaLayer = new google.maps.KmlLayer({
-				    url: '../Images/heberg.kml'
+				    url: 'https://sites.google.com/site/udamobilev2/kml/universite.kml?attredirects=0&d=1'
 				  });
 				  ctaLayer.setMap(map);
 			break;
@@ -406,7 +406,7 @@ function showAll() {
 	
 		case 'divers':{
 			  var ctaLayer = new google.maps.KmlLayer({
-				    url: '../Images/divers.kml'
+				    url: 'https://sites.google.com/site/udamobilev2/kml/universite.kml?attredirects=0&d=1'
 				  });
 				  ctaLayer.setMap(map);
 			break;	
