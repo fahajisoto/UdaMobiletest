@@ -51,7 +51,7 @@
 					    success: function (result, values) {
 					    	if(result == 'register') {
 					    		var saveList = false, listChecked = new Array();
-					    		window.location = 'actualite.html#contentpage';					    		
+					    				    		
 					    		$(values).each(function (index, input) {
 					    			if(input.name == 'rememberMe') {
 					    				if(input.checked == 'checked') {
@@ -76,7 +76,7 @@
 				}
 				else {
 					var listAffi = localStorage.getItem('listChecked').split(',');
-					window.location = '#contentpage';
+				
 					for(var i= 0; i < listAffi.length; i++) {
 						$('#' + listAffi[i]).show();
 					}
@@ -98,8 +98,11 @@
 		    <div data-role="content" data-theme="a">
 				<div class="icon">
 					<img src="../common/css/icons/280x280_actualites.png" width="30%"/>
-					<p>les actualites</p>
 				</div>
+				<div class="annuaire" id="uda"></div>	
+				<div class="annuaire" id="info"></div>					
+				<div class="annuaire" id="breves"></div>
+				<div class="annuaire" id="evenements"></div>	
 			</div>
 			<div id="page_footer" data-role="footer" data-position="fixed"  >
 				<a href="../restaurant/restaurant2.html" data-ajax="false"><img src="../common/css/icons/140x140_restauration.png"/></a>
@@ -107,27 +110,6 @@
 				<a href="../annuaire/annuaire.html" data-transition="slide"data-ajax="false"><img src="../common/css/icons/140x140_annuaire.png"/></a>	
 			</div>
 		</div>
-		<div id="contentpage" data-role="page">
-			<div id="uda_header" data-role="header" data-position="fixed">
-				<div data-role="navbar">
-					<ul>
-						<li><a href="../main.html" data-transition="slide" ><img src="../common/css/icons/home.png" ></a></li>	
-						<li><a data-rel="back" data-direction="reverse"><img src="../common/css/icons/back_button.png"></a></li>
-					</ul>
-				</div>
-			</div>
-			<div data-role="content" data-theme="a">
-	        	<div class="icon"><img src="../common/css/icons/280x280_actualites.png"/></div>
-				<div class="annuaire" id="uda"></div>	
-				<div class="annuaire" id="info"></div>					
-				<div class="annuaire" id="breves"></div>
-				<div class="annuaire" id="evenements"></div>	
-	    	</div>
-	    	<div id="page_footer" data-role="footer" data-position="fixed">
-				<a href="../restaurant/restaurant2.html" data-ajax="false"><img src="../common/css/icons/140x140_restauration.png"/></a>
-				<a href="../map/map.html" data-ajax="false"><img src="../common/css/icons/140x140_carte.png"/></a>
-				<a href="../annuaire/annuaire.html" data-transition="slide"data-ajax="false"><img src="../common/css/icons/140x140_annuaire.png"/></a>	
-			</div>
-		</div>
+
 	</body>
 </html>
