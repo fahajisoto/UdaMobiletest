@@ -30,7 +30,7 @@
 		<script src="../common/js/jquery.mobile-1.3.0.js"></script>
 	</head>
 	<body>
-		<div class="mainPage" id="mainPage" data-role="page" data-theme="a">
+		<div id="mainPage" data-role="page" data-theme="a">
 			<div id="uda_header" data-role="header" data-position="fixed">
 				<div data-role="navbar">
 					<ul>
@@ -38,6 +38,16 @@
 						<li><a data-rel="back" data-direction="reverse"><img src="../common/css/icons/back_button.png"></a></li>
 					</ul>
 				</div>
+			</div>
+		    <div data-role="content" data-theme="a">
+				<iframe src="https://cas.u-clermont1.fr/cas/login?service=http://ent.u-clermont1.fr/Login"></iframe>
+			</div>
+			<div id="page_footer" data-role="footer" data-position="fixed"  >
+				<a href="../map/map.html" data-ajax="false"><img src="../common/css/icons/140x140_carte.png"/></a>
+				<a href="../actualite/actualite.html" data-ajax="false"><img src="../common/css/icons/140x140_actualites.png"/></a>
+				<a  href="../annuaire/annuaire.html" data-ajax="false"><img src="../common/css/icons/140x140_annuaire.png"/></a>	
+				<a href="../ent/ent.html" data-ajax="false"><img src="../common/css/icons/140x140_agenda.png"/></a>
+				<a href="../restaurant/restaurant2.html" data-ajax="false"><img src="../common/css/icons/140x140_restauration.png"/></a>	
 			</div>
     	</div>
 	</body>
