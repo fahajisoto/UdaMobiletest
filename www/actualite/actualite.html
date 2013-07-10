@@ -51,8 +51,7 @@
 					    success: function (result, values) {
 					    	if(result == 'register') {
 					    		var saveList = false, listChecked = new Array();
-					    		
-					    		window.location = '#contentpage';					    		
+					    		window.location = 'actualite.html#contentpage';					    		
 					    		$(values).each(function (index, input) {
 					    			if(input.name == 'rememberMe') {
 					    				if(input.checked == 'checked') {
@@ -97,7 +96,6 @@
 				</div>
 			</div>
 		    <div data-role="content" data-theme="a">
-				<a href="#contentpage" data-role="button">modification des listes</a>
 				<div class="icon">
 					<img src="../common/css/icons/280x280_actualites.png" width="30%"/>
 					<p>les actualites</p>
