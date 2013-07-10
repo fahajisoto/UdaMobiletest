@@ -11,7 +11,7 @@
 
 .ui-bar-a {
 	border: none;
-	background: transparent;
+	background: none;
 	color: #fafafa;
 	font-weight: bold;
 }
@@ -46,7 +46,7 @@
 	
 	color: #fafafa !important;
 	text-shadow: 0 1px 0 #eeeeee;
-	background: transparent;
+	background: none;
 
 }
 
@@ -221,7 +221,7 @@ a.ui-link-inherit {
 
 .ui-icon-nodisc .ui-icon,.ui-icon-nodisc .ui-icon-searchfield:after,.ui-icon-nodisc .ui-icon-alt .ui-icon,.ui-icon-nodisc .ui-icon-alt .ui-icon-searchfield:after
 	{
-	background-color: transparent;
+	background-color: none;
 }
 
 .ui-icon-plus {
@@ -414,7 +414,7 @@ a.ui-link-inherit {
 }
 
 .ui-icon-checkbox-off,.ui-icon-radio-off {
-	background-color: transparent;
+	background-color: none;
 }
 
 .ui-checkbox-on .ui-icon,.ui-radio-on .ui-icon {
@@ -577,6 +577,9 @@ a.ui-link-inherit {
 	padding: 0px;
 	margin: 0px;
 }
+
+
+
 .ui-content a {
 	margin: 0px;
 	padding: 0px;
@@ -609,11 +612,11 @@ th {
 	margin-top: 0em;
 }
 #name{
-	background: transparent;
+	background: none;
 	color: #67abca;
 }
 #listAnnu{
-	background: transparent !important;
+	background: none;
 	color: ##636363 !important;
 }
 #listAnnu li{
@@ -638,8 +641,9 @@ th {
 
 	display: block;
 }
-.rssBody {
+.rssBody a{
 	color:#636363 !important;
+	text-decoration: none !important;
 }
 .rssBody li{
 	border-radius: 0.6em 0.6em 0.6em 0.6em;
@@ -648,7 +652,12 @@ th {
 	color:#636363 !important;
 	text-align: left !important;
 	margins: 1px !important;	
+	list-style-type: none;
+	list-style-image: url('right2.png') !important; 
 }
+
+
+
 @font-face
 {
 	font-family: Shanti;
