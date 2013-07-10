@@ -25,7 +25,7 @@ body {
 	text-decoration: none !important;
 }
 
-.rssHeader { padding: 0.2em 0; color: #636363 !important; }
+.rssHeader { padding: 0.2em 0; color: #636363 !important; 	font-size: 50 px !important;}
 
 .rssBody { border: 1px solid #999 !important; }
 

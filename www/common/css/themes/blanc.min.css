@@ -656,7 +656,10 @@ th {
 	list-style-image: url('right2.png') !important; 
 }
 
-
+#reset{
+	color: #fafafa;
+	margin: 10;
+}
 
 @font-face
 {
