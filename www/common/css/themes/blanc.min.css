@@ -656,11 +656,14 @@ th {
 	list-style-image: url('right2.png') !important; 
 }
 
-#reset{
-	color: #fafafa;
+.reset{
+	color: #67abca;
 	margin: 10;
 }
-
+#iframe{
+	width:device-width;
+	
+}
 @font-face
 {
 	font-family: Shanti;

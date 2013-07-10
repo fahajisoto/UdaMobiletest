@@ -1,9 +1,9 @@
 function listeCoordonnees() {
         //recuperation de la liste des coordonnees
-	//etu = window.localStorage.getItem("codetu");
+	etu = window.localStorage.getItem("codetu");
         $.ajax({
                 //url:"http://localhost/udamobilev2/serveur/examens/?etudiant=21202789",
-                url:"http://udamobile.u-clermont1.fr/v2/examens/?etudiant=21202789",
+        		url:"http://udamobile.u-clermont1.fr/v2/examens/?etudiant=+etu,
                 type: "GET",
                 success: function(feedback) {
                         makelist(feedback);
