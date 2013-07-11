@@ -22,7 +22,7 @@ div.msgBoxBackGround
     margin:0;
     width:100%;
     height:100%;
-    background-color:#000000 !important;
+    background-color:#fafafa !important;
     opacity:0.9;
     z-index:999;
 }
