@@ -2,14 +2,10 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-
 		<title>Annuaire - Rechercher une personne</title>
-		
 		<link rel="stylesheet" href="../common/css/themes/blanc.min.css" />
 		<link rel="stylesheet" href="../common/css/jquery.mobile.structure-1.3.1.min.css" />
-		
 		<script src="../common/js/jquery-1.9.1.min.js"> </script>
-		<script type="text/javascript" src="../common/js/jquery.json.js"></script>
 		<script type="text/javascript">
 			$(document).bind('mobileinit', function(){
 				$.mobile.page.prototype.options.domCache = true;
@@ -19,22 +15,19 @@
 		<script src="../common/js/jquery.mobile-1.3.0.js"></script>
 		<script src="js/initannuaire.js"></script>
 	</head>
-	
 	<body>
-		<!-- MAIN PAGE -->
 		<div id="mainPage" data-role="page" data-theme="a">
 			<div id="uda_header" data-role="header" data-position="fixed">
 				<div data-role="navbar">
 					<ul>
-						<li><a  href="../main.html" data-transition="slide"><img src="../common/css/icons/home.png" ></a></li>
-						<li><a data-rel="back" data-direction="reverse" ><img src="../common/css/icons/back_button.png" ></a></li>
+						<li><a href="../main.html" data-transition="slide"><img src="../common/css/icons/home.png"></a></li>
+						<li><a data-rel="back" data-direction="reverse"><img src="../common/css/icons/back_button.png"></a></li>
 					</ul>
 				</div>
 			</div>
-			<input id="end" type="hidden" value=""/>
 			<div id="header2">
 				<div class="icon">
-					<img src="../common/css/icons/280x280_annuaire.png"  width="30%"/>
+					<img src="../common/css/icons/280x280_annuaire.png" width="30%"/>
 					<p>Rechercher un contact</p>
 				</div>
 				<div>
@@ -46,11 +39,10 @@
 				</div>
 				<ul id="listAnnu" data-role="listview" data-inset="true"></ul>
 			</div>
-			
-			<div id="page_footer" data-role="footer" data-position="fixed"  >
+			<div id="page_footer" data-role="footer" data-position="fixed">
 				<a href="../restaurant/restaurant2.html" data-transition="slide" data-ajax="false"><img class="bottomIcon" src="../common/css/icons/140x140_restauration.png"/></a>
 				<a href="../actualite/actualite.html" data-transition="slide"data-ajax="false"><img class="bottomIcon" src="../common/css/icons/140x140_actualites.png"/></a>
-				<a  href="../map/map.html" data-transition="slide" data-ajax="false"><img class="bottomIcon" src="../common/css/icons/140x140_carte.png"/></a>	
+				<a href="../map/map.html" data-transition="slide" data-ajax="false"><img class="bottomIcon" src="../common/css/icons/140x140_carte.png"/></a>	
 				<a href="../ent/ent.html" data-ajax="false"><img class="bottomIcon" src="../common/css/icons/140x140_agenda.png"/></a>
 				<a href="../emploi/emploi_temps.html" data-transition="slide"data-ajax="false"><img class="bottomIcon" src="../common/css/icons/140x140_emploidutemps.png"/></a>	
 			</div>

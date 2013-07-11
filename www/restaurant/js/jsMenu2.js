@@ -1,73 +1,46 @@
-var nbelt, i;
-var html="";
-var jsonResto;
-var lat;
-var lon;		
-var mapOptions;
-var requeteItineraire;
-var directionsService = new google.maps.DirectionsService();
-var map;
-var address ;
-var end;
-var Radresse;
-var Rcode_postal;
-var Rdescription;
-var nomResto;
-var day= new Array;
-var today = new Date();
-var m;
-var numero=today.getDate();
-var jour;
-var month;
+var nbelt, i, html="", jsonResto, lat, lon, mapOptions, requeteItineraire, directionsService = new google.maps.DirectionsService(), map, address, end, Radresse, Rcode_postal; 
+var Rdescription, nomResto, day= new Array, today = new Date(), m, numero=today.getDate(), jour, month;
 
-function init_itineraire(lat,lan){
+function init_itineraire(lat,lan) {
 	end = new google.maps.LatLng(lat,lan);
 	getLocation();
 }
 
-function getLocation() 
-{
+function getLocation() {
 	$("#mapholder").css({ opacity: 0, zoom: 0 });
 	if (navigator.geolocation)
 		{
 			navigator.geolocation.getCurrentPosition(showPosition,showError);
 		}
 	else{x.innerHTML="Geolocation is not supported by this browser.";}
-
 }
 
-function showPosition(position)
-{
+function showPosition(position) {
 	address = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);		
 	initialize();
 	$('#mapholder').show();
 	$("#mapholder").css({ opacity: 1, zoom: 1 });
 }
 
-function showError(error)
-{
-	switch(error.code) 
-	{
+function showError(error) {
+	switch(error.code) {
 		case error.PERMISSION_DENIED:
-		x.innerHTML="User denied the request for Geolocation."
-		break;
+			x.innerHTML = 'User denied the request for Geolocation.';
+			break;
 		case error.POSITION_UNAVAILABLE:
-		x.innerHTML="Location information is unavailable."
-		break;
+			x.innerHTML = 'Location information is unavailable.';
+			break;
 		case error.TIMEOUT:
-		x.innerHTML="The request to get user location timed out."
-		break;
+			x.innerHTML = 'The request to get user location timed out.';
+			break;
 		case error.UNKNOWN_ERROR:
-		x.innerHTML="An unknown error occurred."
-		break;
+			x.innerHTML = 'An unknown error occurred.';
+			break;
 	}
-
 }
 
-function initialize() 
-{
+function initialize() {
      directionsDisplay = new google.maps.DirectionsRenderer();
-
      var optionsCarte = {
           zoom: 7,
           mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -95,9 +68,6 @@ function initialize()
 	   
 }
 
-function btnhide(){
-
-}
 //fonction qui met en place la liste des resto
 function makeList(json) {
 	html="";
@@ -105,7 +75,7 @@ function makeList(json) {
 	if(jsonResto.code_retour == "ok") {
 		nbelt=jsonResto.count;
 		if( nbelt > 0 ) {		
-			for(i=0; i<nbelt;i++){
+			for(i=0; i<nbelt;i++) {
 				html +="<li class=\"ui-btn ui-btn-up-a ui-btn-icon-right ui-li-has-arrow ui-li ui-first-child\" data-corners=\"false\" data-shadow=\"false\" " +
 							"data-iconshadow=\"true\" onclick=\"setdate();makeaddress('"+escape(jsonResto[i].nom)+"','"+escape(jsonResto[i].adresse)+"','"+jsonResto[i].code_postal+"','"+jsonResto[i].description+"','"+jsonResto[i].latitude+"','"+jsonResto[i].longitude+"');" +
 							"init_itineraire("+jsonResto[i].latitude+","+jsonResto[i].longitude+");menu("+i+");\" " +"data-wrapperels=\"div\" data-icon=\"arrow-r\" data-iconpos=\"right\">" +
@@ -113,7 +83,6 @@ function makeList(json) {
 							+ "<img src=\"http://udamobile.u-clermont1.fr/v2/restaurant/img/"+jsonResto[i].id+".jpg\">"+ jsonResto[i].nom +"("+ jsonResto[i].etat +")"+"</a></div>" +
 							"<span class=\"ui-icon ui-icon-arrow-r ui-icon-shadow\"></span></div></li>";
 			}
-			
 			$('#listeAlpha').html(html);
 		}
 		else {
@@ -125,7 +94,7 @@ function makeList(json) {
 	}
 
 }
-function makeaddress(nom,address,code,desc,lat,lon){
+function makeaddress(nom,address,code,desc,lat,lon) {
 	$.msgBox({
 		title:"loading...",
 		content:"chargement de l'itineraire...",
@@ -144,7 +113,6 @@ function makeaddress(nom,address,code,desc,lat,lon){
 }
 // init la liste des resto par ordre alpha
 function initMenuAlpha() {
-
 	//recuperation du tableau des resto
 	$.ajax({
 		url:"http://udamobile.u-clermont1.fr/v2/restaurant/",
@@ -154,15 +122,13 @@ function initMenuAlpha() {
 		},
 	});
 }
-
-function setdate(){
+function setdate() {
 	month= today.getMonth();	
 	TabJour = new Array("Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi");
 	TabMois = new Array("janvier","février","mars","avril","mai","juin","juillet","aout","septembre","octobre","novembre","décembre");
 	messageDate = TabJour[jour] + " " + numero + " " + TabMois[month];
 	$('#pdate').html(messageDate);
 	month=month+1;
-	
 	if (month>9){
 		day = today.getFullYear()+"-"+month+"-"+numero;
 	}
@@ -174,7 +140,6 @@ function setdate(){
 function menu(iter) {
 	//recuperation du tableau des resto
 	m=iter;
-	//alert(day);
 	$.ajax({
 		url:"http://udamobile.u-clermont1.fr/v2/restaurant/?menu="+m+"&token=2a2a504c2d&date="+day,
 		type: "GET",
@@ -234,7 +199,6 @@ function makemenu(json){
 	}
 	$('#page_menu').html("");	
 	$('#page_menu').html(html);	
-
 }
 
 //btn retour sur la liste des resto qd on est ds le menu
@@ -243,7 +207,6 @@ $(document).on('click','#btnBack', function(){
 	jour = today.getDay();
 	numero = today.getDate();
 	html="";
-
 });
 
 $(document).ready(function() {
@@ -251,7 +214,6 @@ $(document).ready(function() {
 	jour = today.getDay();
 	numero = today.getDate();
 	setdate();
-	
 });
 
 $(document).on('swipeleft','#btnnext', function() {
@@ -264,9 +226,7 @@ $(document).on('swipeleft','#btnnext', function() {
 	}
 	setdate();
 	menu(m);
-
 } );
-
 
 $(document).on('swiperight','#btnlast', function() {
 	numero=numero-1;
@@ -278,6 +238,4 @@ $(document).on('swiperight','#btnlast', function() {
 	}
 	setdate();
 	menu(m);
-
 });
-

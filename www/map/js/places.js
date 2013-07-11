@@ -13,56 +13,58 @@ var requeteItineraire;
 var directionsService = new google.maps.DirectionsService();
 var end;
 var distance;
-var latitude=new Array;
-var longitude=new Array;
+var latitude=new Array([]);
+var longitude=new Array([]);
 var listAttribute;
 
+/**
+ * set_attribute
+ * @param list
+ */
 function set_attribute(list){
-	switch(list){
-	case 'universite':{
-		listAttribute='universite';
-		break;
-	}	
+	switch(list) {
+		case 'universite':
+			listAttribute='universite';
+			break;
 
-	case 'sante':{	
-		listAttribute='sante';
-		break;
-	}
+		case 'sante':	
+			listAttribute='sante';
+			break;
 		
-	case 'loisir':{
-		listAttribute='loisir';
-		break;
-	}
+		case 'loisir':
+			listAttribute='loisir';
+			break;
 	
-	case 'BU':{
-		listAttribute='BU';
-		break;
-	}
+		case 'BU':
+			listAttribute='BU';
+			break;
 	
-	case 'resto':{
-		listAttribute='resto';
-		break;
-	}
+		case 'resto':
+			listAttribute='resto';
+			break;
 
-	case 'heberg':{
-		listAttribute='heberg';
-		break;
-	 }	
+		case 'heberg':
+			listAttribute='heberg';
+			break;
 
-	case 'divers':{
-		listAttribute='divers';
-		break;
-	}
+		case 'divers':
+			listAttribute='divers';
+			break;
 	}
 }
+
+/**
+ * listbuildings
+ * @param list
+ */
 function listbuildings(list){
 	$('#listbuildings').hide();
 	$('#newlist').show();
 	var places;
 
-	switch(list){
-	case 'universite':{
-		places={
+	switch(list) {
+		case 'universite':
+			places={
 				'université': [45.770584,3.087909],
 				'Faculté de Droit et de Science Politique':[45.771022,3.089612],
 				'Faculté des Sciences Economiques et de Gestion':[45.771089,3.089397],
@@ -82,38 +84,35 @@ function listbuildings(list){
 				'IFSI Moulins':[46.567334,3.328008],
 				'IFSI Montluçon':[46.342456,2.610415],
 				'IFSI Aurillac':[44.926644,2.435539],
-				'CERDI':[45.77061,3.085839],
-		};
-		break;
-	}	
+				'CERDI':[45.77061,3.085839]
+			};
+			break;
 
-	case 'sante':{	
-		places = {
+		case 'sante':	
+			places = {
 				'SSU  SITE DE DOLET':[45.76444,3.087686],
 				'SSU   U.F.R. SCIENCES':[45.759799,3.113036],
 				'SSU  U.F.R. LETTRES':[45.771619,3.091046],
 				'SSU  I.U.T. Cézeaux':[45.76182,3.108552],
 				'SSU UFR-STAPS-INFIRMERIE':[45.760441,3.10776],
-				'SSU DENTISTERIE PREVENTIVE UNIVERSITAIRE':[45.773413,3.083392],
-		};
-		break;
-	}
+				'SSU DENTISTERIE PREVENTIVE UNIVERSITAIRE':[45.773413,3.083392]
+			};
+			break;
 		
-	case 'loisir':{
-		places = {
+		case 'loisir':
+			places = {
 				'Service Université Culture':[45.771678,3.09095],
 				'SUAPS Clermont-Ferrand':[45.763674,3.084635],
 				'Stade P. Marcombes':[45.760618,3.084365],
 				'Complexe sportif des Cézeaux':[45.758751,3.108058],
 				'Stade nautique Pierre de Coubertin':[45.768601,3.084841],
 				'Piscine municipale de Chamalières':[45.769285,3.066201],
-				'Patinoire':[45.7624536,3.126646899999969],
-		};
+				'Patinoire':[45.7624536,3.126646899999969]
+			};
 		break;
-	}
 	
-	case 'BU':{
-		places = {
+		case 'BU':
+			places = {
 				'Bibliothèque de Droit et de Sciences Economiques':[45.770992,3.089],
 				'Bibliothèque de droit et sciences économiques-BU Rotonde':[45.769503,3.093699],
 				'Bibliothèque du réseau Lettres-Bibliothèque Gergovia':[45.7720014,3.0903408000000354],
@@ -129,13 +128,12 @@ function listbuildings(list){
 				'Bibliothèque de Santé':[45.759761,3.089669],
 				'Bibliothèque Odontologie':[45.77342,3.084197],
 				'Bibliothèque de IUT':[45.762007,3.108466],
-				'Bibliothèque de IUFM Auvergne':[45.770921,3.0727600000000166],
-		};
+				'Bibliothèque de IUFM Auvergne':[45.770921,3.0727600000000166]
+			};
 		break;
-	}
 	
-	case 'resto':{
-		places = {
+		case 'resto':
+			places = {
 				'Kiosque la Ronde des Saveurs':[45.764354,3.087001],
 				'RU Le Clos Saint-Jacques':[45.764129,3.087155],
 				'RU Le Cratère':[45.768927,3.093009],
@@ -154,13 +152,12 @@ function listbuildings(list){
 				'Les Hauts De L’Artière':[45.758573,3.113809],
 				'Cafétéria Le Dunant':[45.759791,3.089363],
 				'RU Montlucon et Brasserie':[46.330615,2.589780],
-				'RU IUT Montlucon':[46.328493,2.589528],
-		};
+				'RU IUT Montlucon':[46.328493,2.589528]
+			};
 		break;
-	}
 
-	case 'heberg':{
-		places = {
+		case 'heberg':
+			places = {
 				'Maison Internationale Universitaire':[45.769675,3.087607],
 				'Résidence Amboise':[45.774733,3.092651],
 				'Résidence du Clos Saint-jacques':[45.764395,3.086879],
@@ -174,7 +171,6 @@ function listbuildings(list){
 				'Studios des Cézeaux Bat 22':[45.756299,3.111690],
 				'Résidence des Cézeaux Cite 1':[45.759726,3.118057],
 				'Résidence des Cézeaux Cite 2':[45.755845,3.110056],
-				'Résidence Amboise':[45.774733,3.092651],
 				'Résidence Philippe-Lebon A':[45.771352,3.092564],
 				'Résidence Philippe-Lebon B':[45.771332,3.092173],
 				'Résidence Philippe-Lebon C':[45.77169,3.09258],
@@ -186,87 +182,89 @@ function listbuildings(list){
 				'Résidence Paul-Collomp':[45.773864,3.091697],
 				'Résidence Poncillon':[45.76311,3.083912],
 				'Résidence Les Hauts de Lafayette':[45.76928,3.104708],
-				'Cité U - Montlucon':[46.330615,2.589780],
-			
-		 };
+				'Cité U - Montlucon':[46.330615,2.589780]
+			};
 		break;
-	 }	
-
-	case 'divers':{
-		places = {
-			 	'Service Université Handicap':[45.759799,3.113036],
-			 	'ESPACE INFO JEUNES':[45.7770271,3.085534300000063],
-			 	'Mission des Relations Internationales':[45.7795502,3.090145],	
-		};
+		
+		case 'divers':
+			places = {
+				'Service Université Handicap':[45.759799,3.113036],
+				'ESPACE INFO JEUNES':[45.7770271,3.085534300000063],
+				'Mission des Relations Internationales':[45.7795502,3.090145]
+			};
 		break;
 	}
-	}
-	html += "<li class=\"ui-btn ui-btn-up-a ui-btn-icon-right ui-li-has-arrow ui-li ui-first-child\" data-corners=\"false\" data-shadow=\"false\" data-iconshadow=\"true\"onclick=\"showAll()\"data-wrapperels=\"div\" data-icon=\"arrow-r\" data-iconpos=\"right\" data-theme=\"a\"><div class=\"ui-btn-inner ui-li\"><div class=\"ui-btn-text\"><a class=\"ui-link-inherit\"data-transition=\"slide\">show all</a></div><span class=\"ui-icon ui-icon-arrow-r ui-icon-shadow\"> </span></div></li>";
+	html += '<li class=\"ui-btn ui-btn-up-a ui-btn-icon-right ui-li-has-arrow ui-li ui-first-child\" data-corners=\"false\" data-shadow=\"false\" data-iconshadow=\"true\"onclick=\"showAll()\"data-wrapperels=\"div\" data-icon=\"arrow-r\" data-iconpos=\"right\" data-theme=\"a\"><div class=\"ui-btn-inner ui-li\"><div class=\"ui-btn-text\"><a class=\"ui-link-inherit\"data-transition=\"slide\">show all</a></div><span class=\"ui-icon ui-icon-arrow-r ui-icon-shadow\"> </span></div></li>';
 	for(var i in places){
-		 html += "<li class=\"ui-btn ui-btn-up-a ui-btn-icon-right ui-li-has-arrow ui-li ui-first-child\" data-corners=\"false\" data-shadow=\"false\" data-iconshadow=\"true\" onclick=\"init_itineraire(" + places[i][0]+ ","+ places[i][1] + ")\" data-wrapperels=\"div\" data-icon=\"arrow-r\" data-iconpos=\"right\" data-theme=\"a\"><div class=\"ui-btn-inner ui-li\"><div class=\"ui-btn-text\"><a class=\"ui-link-inherit\" data-transition=\"slide\">"+ i +"</a></div><span class=\"ui-icon ui-icon-arrow-r ui-icon-shadow\"> </span></div></li>";
-		 counter++;
-	     //distance=google.maps.geometry.spherical.computeDistanceBetween (end, address);
-	     //alert(distance);
+		html += '<li class=\"ui-btn ui-btn-up-a ui-btn-icon-right ui-li-has-arrow ui-li ui-first-child\" data-corners=\"false\" data-shadow=\"false\" data-iconshadow=\"true\" onclick=\"init_itineraire(' + places[i][0]+ ','+ places[i][1] + ')\" data-wrapperels=\"div\" data-icon=\"arrow-r\" data-iconpos=\"right\" data-theme=\"a\"><div class=\"ui-btn-inner ui-li\"><div class=\"ui-btn-text\"><a class=\"ui-link-inherit\" data-transition=\"slide\">'+ i +'</a></div><span class=\"ui-icon ui-icon-arrow-r ui-icon-shadow\"></span></div></li>';
+		counter++;
+		//distance=google.maps.geometry.spherical.computeDistanceBetween (end, address);
+		//alert(distance);
 	}
-	
 	$('#newlist').html(html);
 	$('#listbuildings').hide();
 	a=1;
 	$('#backButton').attr('onclick', 'back_to_category('+a+')');
-
 }
 
+/**
+ * back_to_category
+ * @param a
+ */
 function back_to_category(a){
-	
 	if(a==1){
-	$('#listbuildings').show();
-	$('#newlist').hide();	
-	$("#mapholder").css({ opacity: 0, zoom: 0 });
-	$('#backButton').attr('onclick', 'window.location=\'map.html\'\;');
+		$('#listbuildings').show();
+		$('#newlist').hide();	
+		$('#mapholder').css({ opacity: 0, zoom: 0 });
+		$('#backButton').attr('onclick', 'window.location=\'map.html\';');
 	}
-
 	else{
 		a=1;
 		$('#newlist').show();
 		$('#listbuildings').hide();
-		$("#mapholder").css({ opacity: 0, zoom: 0 });
+		$('#mapholder').css({ opacity: 0, zoom: 0 });
 		$('#backButton').attr('onclick', 'back_to_category('+a+')');
 	}
 }
 
-$(document).on('click','#backButton', function() {
-	html="";
-	$('#EmplacementItineraireTexte').text("");
-  });
-
-
+/**
+ * init_itineraire
+ * @param lat
+ * @param lan
+ */
 function init_itineraire(lat,lan){
 	latitude[0]=lat;
 	longitude[0]=lan;
 	end = new google.maps.LatLng(lat,lan);
 	getLocation();
-
 }
 
-function getLocation() 
-{
+/**
+ * getLocation
+ */
+function getLocation() {
 	$.msgBox({
-		title:"loading...",
-		content:"chargement...",
-		type:"info",
-	    opacity:0.9
+		title: 'loading...',
+		content: 'chargement...',
+		type: 'info',
+		opacity: 0.9,
+	    showButtons:false,
+	    autoClose:true
 	});
-	$("#mapholder").css({ opacity: 0, zoom: 0 });
-	if (navigator.geolocation)
-		{
-			navigator.geolocation.getCurrentPosition(showPosition,showError);
-		}
-	else{x.innerHTML="Geolocation is not supported by this browser.";}
-
+	$('#mapholder').css({ opacity: 0, zoom: 0 });
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(showPosition,showError);
+	}
+	else {
+		x.innerHTML = 'Geolocation is not supported by this browser.';
+	}
 }
 
-function showPosition(position)
-{
+/**
+ * showPosition
+ * @param position
+ */
+function showPosition(position) {
 	a=2;
 	$('#backButton').attr('onclick', 'back_to_category('+a+')');
 	address = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
@@ -274,55 +272,56 @@ function showPosition(position)
 	longitude[1]=new google.maps.LatLng(position.coords.longitude);
 	initialize();
 	$('#mapholder').show();
-
-	$("#listbuildings").hide();
-	$("#newlist").hide();
-	$("#header2").hide();
-	$("#mapholder").css({ opacity: 1, zoom: 1 });
+	$('#listbuildings').hide();
+	$('#newlist').hide();
+	$('#header2').hide();
+	$('#mapholder').css({ opacity: 1, zoom: 1 });
 }
 
-function showError(error)
-{
-	switch(error.code) 
-	{
+/**
+ * showError
+ * @param error
+ */
+function showError(error) {
+	switch(error.code) {
 		case error.PERMISSION_DENIED:
-		x.innerHTML="User denied the request for Geolocation."
-		break;
+			x.innerHTML = 'User denied the request for Geolocation.';
+			break;
 		case error.POSITION_UNAVAILABLE:
-		x.innerHTML="Location information is unavailable."
-		break;
+			x.innerHTML = 'Location information is unavailable.';
+			break;
 		case error.TIMEOUT:
-		x.innerHTML="The request to get user location timed out."
-		break;
+			x.innerHTML = 'The request to get user location timed out.';
+			break;
 		case error.UNKNOWN_ERROR:
-		x.innerHTML="An unknown error occurred."
-		break;
+			x.innerHTML = 'An unknown error occurred.';
+			break;
 	}
-
 }
 
-function initialize() 
-{
+/**
+ * initialize
+ */
+function initialize() {
      directionsDisplay = new google.maps.DirectionsRenderer();
 
      var optionsCarte = {
           zoom: 7,
           mapTypeId: google.maps.MapTypeId.ROADMAP,
           center: address,
-				mapTypeControlOptions: 
-				{
-				  style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
-				  position: google.maps.ControlPosition.TOP_LEFT
+				mapTypeControlOptions: {
+					style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+					position: google.maps.ControlPosition.TOP_LEFT
 				}
-     }
-     map = new google.maps.Map(document.getElementById("mapholder"), optionsCarte);
+     };
+     map = new google.maps.Map(document.getElementById('mapholder'), optionsCarte);
      directionsDisplay.setMap(map);
-     directionsDisplay.setPanel(document.getElementById("EmplacementItineraireTexte"));
+     directionsDisplay.setPanel(document.getElementById('EmplacementItineraireTexte'));
      var requeteItineraire = {
           origin: address,
           destination: end,
           region: "fr",
-			travelMode: google.maps.DirectionsTravelMode.DRIVING
+          travelMode: google.maps.DirectionsTravelMode.DRIVING
      };
      directionsService.route(requeteItineraire, function(response, status) {
           if (status == google.maps.DirectionsStatus.OK) {
@@ -330,86 +329,79 @@ function initialize()
           }
      });
 
-     distance=google.maps.geometry.spherical.computeDistanceBetween (address, end);
-     alert("distance:"+distance+"m");
-
-
-	   
+     distance=google.maps.geometry.spherical.computeDistanceBetween (address, end); 
 }
 
-
-
-
+/**
+ * showAll
+ */
 function showAll() {
+	var ctaLayer;
 	address = new google.maps.LatLng(45.770584,3.087909);
-	 mapOptions = {
-			    zoom: 9,
-			    center: address,
-			    mapTypeId: google.maps.MapTypeId.ROADMAP
-			  }
-			  map = new google.maps.Map(document.getElementById('mapholder'), mapOptions);
-	  $('#mapholder').show();
-		$("#listbuildings").hide();
-		$("#newlist").hide();
-		$("#header2").hide();
-		$("#mapholder").css({ opacity: 1, zoom: 1 });
+	mapOptions = {
+		zoom: 9,
+		center: address,
+		mapTypeId: google.maps.MapTypeId.ROADMAP
+	};
+	map = new google.maps.Map(document.getElementById('mapholder'), mapOptions);
+	$('#mapholder').show();
+	$('#listbuildings').hide();
+	$('#newlist').hide();
+	$('#header2').hide();
+	$('#mapholder').css({ opacity: 1, zoom: 1 });
 	switch(listAttribute){
-		case 'universite':{
-		
-					  var ctaLayer = new google.maps.KmlLayer({
-					    url: 'https://sites.google.com/site/udamobilev2/kml/universite.kml?attredirects=0&d=1'
-					  });
-					  ctaLayer.setMap(map);
-
+		case 'universite':
+			ctaLayer = new google.maps.KmlLayer({
+				url: 'https://sites.google.com/site/udamobilev2/kml/universite.kml?attredirects=0&d=1'
+			});
+			ctaLayer.setMap(map);
 			break;
-		}	
 	
-		case 'sante':{	
-			  var ctaLayer = new google.maps.KmlLayer({
-				    url: 'https://sites.google.com/site/udamobilev2/kml/sante.kml?attredirects=0&d=1'
-				  });
-				  ctaLayer.setMap(map);
+		case 'sante':
+			ctaLayer = new google.maps.KmlLayer({
+				url: 'https://sites.google.com/site/udamobilev2/kml/sante.kml?attredirects=0&d=1'
+			});
+			ctaLayer.setMap(map);
 			break;
-		}
 			
-		case 'loisir':{
-			  var ctaLayer = new google.maps.KmlLayer({
-				    url: 'https://sites.google.com/site/udamobilev2/kml/loisir.kml?attredirects=0&d=1'
-				  });
-				  ctaLayer.setMap(map);
+		case 'loisir':
+			ctaLayer = new google.maps.KmlLayer({
+				url: 'https://sites.google.com/site/udamobilev2/kml/loisir.kml?attredirects=0&d=1'
+			});
+			ctaLayer.setMap(map);
 			break;
-		}
 		
-		case 'BU':{
-			  var ctaLayer = new google.maps.KmlLayer({
-				    url: 'https://sites.google.com/site/udamobilev2/kml/BU.kml?attredirects=0&d=1'
-				  });
-				  ctaLayer.setMap(map);
+		case 'BU':
+			ctaLayer = new google.maps.KmlLayer({
+				url: 'https://sites.google.com/site/udamobilev2/kml/BU.kml?attredirects=0&d=1'
+			});
+			ctaLayer.setMap(map);
 			break;
-		}
 		
-		case 'resto':{
-			  var ctaLayer = new google.maps.KmlLayer({
-				    url: 'https://sites.google.com/site/udamobilev2/kml/RU.kml?attredirects=0&d=1'
-				  });
-				  ctaLayer.setMap(map);
+		case 'resto':
+			ctaLayer = new google.maps.KmlLayer({
+				url: 'https://sites.google.com/site/udamobilev2/kml/RU.kml?attredirects=0&d=1'
+			});
+			ctaLayer.setMap(map);
 			break;
-		}
 	
-		case 'heberg':{
-			  var ctaLayer = new google.maps.KmlLayer({
-				    url: 'https://sites.google.com/site/udamobilev2/kml/HU.kml?attredirects=0&d=1'
-				  });
-				  ctaLayer.setMap(map);
+		case 'heberg':
+			ctaLayer = new google.maps.KmlLayer({
+				url: 'https://sites.google.com/site/udamobilev2/kml/HU.kml?attredirects=0&d=1'
+			});
+			ctaLayer.setMap(map);
 			break;
-		 }	
 	
-		case 'divers':{
-			  var ctaLayer = new google.maps.KmlLayer({
-				    url: 'https://sites.google.com/site/udamobilev2/kml/divers.kml?attredirects=0&d=1'
-				  });
-				  ctaLayer.setMap(map);
+		case 'divers':
+			ctaLayer = new google.maps.KmlLayer({
+				url: 'https://sites.google.com/site/udamobilev2/kml/divers.kml?attredirects=0&d=1'
+			});
+			ctaLayer.setMap(map);
 			break;	
-		}
 	}
 }
+
+$(document).on('click','#backButton', function() {
+	html="";
+	$('#EmplacementItineraireTexte').text("");
+});
