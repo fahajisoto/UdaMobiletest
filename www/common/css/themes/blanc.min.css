@@ -697,7 +697,7 @@ body.loading .Loading {
    overflow:hidden;
    width: 100%;
    top:0;
-   bottom:0;// instead of height: 100%;
+   bottom:0; /* instead of height: 100%;*/
    box-shadow: 0 0 20px purple;
    /*  height:198px; */
    z-index: 20;
@@ -738,4 +738,8 @@ body.loading .Loading {
 	border: none !important;
 	height: 22% !important;	
 	max-width:45% !important;
+}
+
+.bottomIcon{
+	width: 50%;
 }
