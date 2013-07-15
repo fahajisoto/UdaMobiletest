@@ -1,5 +1,5 @@
 var nbelt, i, html="", jsonResto, lat, lon, mapOptions, requeteItineraire, directionsService = new google.maps.DirectionsService(), map, address, end, Radresse, Rcode_postal; 
-var Rdescription, nomResto, day= new Array, today = new Date(), m, numero=today.getDate(), jour, month;
+var Rdescription, nomResto, day = new Array(), today = new Date(), m, numero=today.getDate(), jour, month;
 
 function init_itineraire(lat,lan) {
 	end = new google.maps.LatLng(lat,lan);
@@ -47,10 +47,10 @@ function initialize() {
           center: address,
 				mapTypeControlOptions: 
 				{
-				  style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
-				  position: google.maps.ControlPosition.TOP_LEFT
+					style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+					position: google.maps.ControlPosition.TOP_LEFT
 				}
-     }
+	};
      map = new google.maps.Map(document.getElementById("mapholder"), optionsCarte);
      directionsDisplay.setMap(map);
      directionsDisplay.setPanel(document.getElementById("addressText"));
@@ -64,8 +64,7 @@ function initialize() {
           if (status == google.maps.DirectionsStatus.OK) {
                directionsDisplay.setDirections(response);
           }
-     });
-	   
+	});
 }
 
 //fonction qui met en place la liste des resto
@@ -78,9 +77,7 @@ function makeList(json) {
 			for(i=0; i<nbelt;i++) {
 				html +="<li class=\"ui-btn ui-btn-up-a ui-btn-icon-right ui-li-has-arrow ui-li ui-first-child\" data-corners=\"false\" data-shadow=\"false\" " +
 							"data-iconshadow=\"true\" onclick=\"setdate();makeaddress('"+escape(jsonResto[i].nom)+"','"+escape(jsonResto[i].adresse)+"','"+jsonResto[i].code_postal+"','"+jsonResto[i].description+"','"+jsonResto[i].latitude+"','"+jsonResto[i].longitude+"');" +
-							"init_itineraire("+jsonResto[i].latitude+","+jsonResto[i].longitude+");menu("+i+");\" " +"data-wrapperels=\"div\" data-icon=\"arrow-r\" data-iconpos=\"right\">" +
-							"<div class=\"ui-btn-inner ui-li\"><div class=\"ui-btn-text\"><a href=\"#menupage\" class=\"ui-link-inherit\" data-transition=\"slide\">"
-							+ "<img src=\"http://udamobile.u-clermont1.fr/v2/restaurant/img/"+jsonResto[i].id+".jpg\">"+ jsonResto[i].nom +"("+ jsonResto[i].etat +")"+"</a></div>" +
+							"init_itineraire("+jsonResto[i].latitude+","+jsonResto[i].longitude+");menu("+i+");\"data-wrapperels=\"div\" data-icon=\"arrow-r\" data-iconpos=\"right\"><div class=\"ui-btn-inner ui-li\"><div class=\"ui-btn-text\"><a href=\"#menupage\" class=\"ui-link-inherit\" data-transition=\"slide\">" + "<img src=\"http://udamobile.u-clermont1.fr/v2/restaurant/img/"+jsonResto[i].id+".jpg\">"+ jsonResto[i].nom +"("+ jsonResto[i].etat +")"+"</a></div>" +
 							"<span class=\"ui-icon ui-icon-arrow-r ui-icon-shadow\"></span></div></li>";
 			}
 			$('#listeAlpha').html(html);
@@ -99,9 +96,9 @@ function makeaddress(nom,address,code,desc,lat,lon) {
 		title:"loading...",
 		content:"chargement de l'itineraire...",
 		type:"info",
-	    opacity:0.9,
-	    showButtons:false,
-	    autoClose:true
+		opacity:0.9,
+		showButtons:false,
+		autoClose:true
 	});
 	nomResto=unescape(nom);
 	Radresse=unescape(address);
@@ -152,39 +149,28 @@ function menu(iter) {
 function makemenu(json){
 	html="";
 	$('#Rname').html("<h3>"+nomResto+"</h3>");
-	if(json!="")
-	{
+	if(json!=="") {
 		var jsonMenu = jQuery.isPlainObject(json) ? json: jQuery.parseJSON(json);
 		var MenuResto = jQuery.isPlainObject(jsonMenu) ? json: jQuery.parseJSON(jsonMenu);	
 		var MidiSize = Object.keys(jsonMenu.midi).length;
 		var SoirSize = Object.keys(jsonMenu.soir).length;
-		var EntréesMidi= jsonMenu.midi.Entrées;
-		var PlatsMidi= jsonMenu.midi.Plats;
-		var LégumesMidi= jsonMenu.midi.Légumes;
-		var DessertsMidi= jsonMenu.midi.Desserts;
-		if(SoirSize>0){
-		var EntréesSoir= jsonMenu.soir.Entrées;
-		var PlatsSoir= jsonMenu.soir.Plats;
-		var LégumesSoir= jsonMenu.soir.Légumes;
-		var DessertsSoir= jsonMenu.soir.Desserts;
-		}
 		var serveur= jsonMenu.date;
 			if(day == serveur)
 			{
 				if(MidiSize>0)
 					html +="<li><img src=\"css/1371832864_applications-science.png\" class=\"icons\"></img><p>Midi:</p></li>"+
-							"<li id=\"EntréesM\"><img src=\"css/1371832359_toast.png\" class=\"icons\"></img><p>Entrées:"+EntréesMidi+"</p></li>" +
-							"<li id=\"PlatsM\"><img src=\"css/1371831932_Space Food.png\" class=\"icons\"></img><p>Plats:"+PlatsMidi+"</p></li>" +
-							"<li id=\"LégumesM\"><img src=\"css/1371831994_pepper.png\" class=\"icons\"></img><p>Légumes:"+ LégumesMidi+"</p></li>" +
-							"<li id=\"DessertsM\"><img src=\"css/1371831883_strawberry_ice_cream.png\" class=\"icons\"></img><p>Desserts:"+DessertsMidi+"</p></li>";
+							"<li id=\"EntréesM\"><img src=\"css/1371832359_toast.png\" class=\"icons\"></img><p>Entrées:" + jsonMenu.midi.Entrées + "</p></li>" +
+							"<li id=\"PlatsM\"><img src=\"css/1371831932_Space Food.png\" class=\"icons\"></img><p>Plats:" + jsonMenu.midi.Plats + "</p></li>" +
+							"<li id=\"LégumesM\"><img src=\"css/1371831994_pepper.png\" class=\"icons\"></img><p>Légumes:" + jsonMenu.midi.Légumes + "</p></li>" +
+							"<li id=\"DessertsM\"><img src=\"css/1371831883_strawberry_ice_cream.png\" class=\"icons\"></img><p>Desserts:" + jsonMenu.midi.Desserts + "</p></li>";
 				else 
 					html += "<li><p><span style='text-decoration:underline' >Midi</span> : Pas de service</p></li>";
 				if(SoirSize>0)
 					html+="<li><img src=\"css/1371832845_weather-few-clouds-night.png\" class=\"icons\"></img><p>Soir:</p></li>"+
-							"<li id=\"EntréesSoir\"><img src=\"css/1371832359_toast.png\" class=\"icons\"></img><p>Entrées:"+EntréesSoir+"</p></li>" +
-							"<li id=\"Plats\"><img src=\"css/1371831932_Space Food.png\" class=\"icons\"></img><p>Plats:"+PlatsSoir+"</p></li>" +
-							"<li id=\"Légumes\"><img src=\"css/1371831994_pepper.png\" class=\"icons\"></img><p>Légumes:"+ LégumesSoir+"</p></li>" +
-							"<li id=\"Desserts\"><img src=\"css/1371831883_strawberry_ice_cream.png\" class=\"icons\"></img><p>Desserts:"+DessertsSoir+"</p></li>";
+							"<li id=\"EntréesSoir\"><img src=\"css/1371832359_toast.png\" class=\"icons\"></img><p>Entrées:" + jsonMenu.soir.Entrées + "</p></li>" +
+							"<li id=\"Plats\"><img src=\"css/1371831932_Space Food.png\" class=\"icons\"></img><p>Plats:" + jsonMenu.soir.Plats + "</p></li>" +
+							"<li id=\"Légumes\"><img src=\"css/1371831994_pepper.png\" class=\"icons\"></img><p>Légumes:" + jsonMenu.soir.Légumes + "</p></li>" +
+							"<li id=\"Desserts\"><img src=\"css/1371831883_strawberry_ice_cream.png\" class=\"icons\"></img><p>Desserts:" + jsonMenu.soir.Desserts + "</p></li>";
 		
 				else 
 					html += "<li><p class=\"soir\"><span style='text-decoration:underline' ><h4>Soir</span> : Pas de service</h4></p></li>";

@@ -1,21 +1,5 @@
-var html="";
-var a=3;
-var map;
-var myMarker;		
-var address ;			
-var mapOptions;
-var counter=0;
-var nbelt, i;
-var lat;
-var lon;		
-var directionDisplay;
-var requeteItineraire;
-var directionsService = new google.maps.DirectionsService();
-var end;
-var distance;
-var latitude=new Array([]);
-var longitude=new Array([]);
-var listAttribute;
+var html="", a=3, map, myMarker, address, mapOptions, counter=0, nbelt, i, lat, lon, directionDisplay, requeteItineraire, directionsService = new google.maps.DirectionsService();
+var end, distance, latitude=new Array([]), longitude=new Array([]), listAttribute;
 
 /**
  * set_attribute
@@ -248,8 +232,8 @@ function getLocation() {
 		content: 'chargement...',
 		type: 'info',
 		opacity: 0.9,
-	    showButtons:false,
-	    autoClose:true
+		showButtons:false,
+		autoClose:true
 	});
 	$('#mapholder').css({ opacity: 0, zoom: 0 });
 	if (navigator.geolocation) {

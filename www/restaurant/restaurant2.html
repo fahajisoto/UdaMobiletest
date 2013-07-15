@@ -50,9 +50,8 @@
 				#page_menu {
 					color: #fafafa !important;
 				}
-				.page_layout{
+				.contents{
 					width:100%;
-					padding-bottom:  20% !important;
 					display: block;
 				}
 				.ui-li li{
@@ -79,14 +78,12 @@
 					</ul>
 				</div>
 			</div>	
-			<div id="header2">	
+			<div data-role="content" data-theme="a" class="contents">	
 				<div class="icon">
 					<img src="../common/css/icons/280x280_restauration.png"  width="30%"/>
 				</div>
-			</div>
-			<div class="page_layout" class="contents">
-					<ul id="listeAlpha" data-role="listview"></ul>
-					<small id="page_footer">Source : CROUS Clermont-Ferrand</small>
+				<ul id="listeAlpha" data-role="listview"></ul>
+				<small id="page_footer">Source : CROUS Clermont-Ferrand</small>
 			</div>
 			<div id="page_footer" data-role="footer" data-position="fixed">
 				<a href="../map/map.html" data-ajax="false"><img src="../common/css/icons/140x140_carte.png"/></a>
@@ -105,7 +102,7 @@
 					</ul>
 				</div>
 			</div>	
-			<div class="contents">
+			<div data-role="content" data-theme="a" class="contents">	
 				<div class="ui-body-a" id="pdate"></div>
 				<div class="ui-body-a" id="Rname"></div>
 				<table id="textmenu">
