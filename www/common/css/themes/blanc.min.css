@@ -723,21 +723,24 @@ body.loading .Loading {
     position:relative;
     cursor:default;
 }
-#mainNavbar{
-	border: none !important;
+#mainNavbar {
+	margin: 0 !important;
+	padding: 0 !important;
 	text-align: center !important;
-	margin:0 !important;
-	padding:0 !important;
-	color:#67abca !important;	
 }
-#mainNavbar a{
-	margin:0 !important;
-	padding:0 !important;
-	background: none !important;
-	position: relative;
-	border: none !important;
-	height: 22% !important;	
+#mainNavbar a {
+	display: inline-block;
 	max-width: 45% !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	border: none !important;
+	background: none !important;
+}
+#mainNavbar a img {
+	width: 100% !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	border: none !important;
 }
 
 .bottomIcon{
