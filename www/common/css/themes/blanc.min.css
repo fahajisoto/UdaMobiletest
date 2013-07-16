@@ -737,10 +737,9 @@ body.loading .Loading {
 	position: relative;
 	border: none !important;
 	height: 22% !important;	
-	max-width:45% !important;
+	max-width: 45% !important;
 }
-/*
+
 .bottomIcon{
-	width: 50%;
+	width: 80%;
 }
-*/
