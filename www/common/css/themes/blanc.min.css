@@ -729,7 +729,7 @@ body.loading .Loading {
 }
 #mainNavbar a {
 	display: inline-block;
-	max-width: 45% !important;
+	width: 45% !important;
 	margin: 0 !important;
 	padding: 0 !important;
 	border: none !important;
