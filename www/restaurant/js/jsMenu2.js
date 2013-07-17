@@ -67,7 +67,7 @@ function initialize() {
 	});
 }
 
-//fonction qui met en place la liste des resto
+//fonction qui met en place la liste des restaurants
 function makeList(json) {
 	html="";
 	jsonResto = jQuery.isPlainObject(json) ? json: jQuery.parseJSON(json);
